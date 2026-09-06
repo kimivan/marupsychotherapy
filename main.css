@@ -113,10 +113,14 @@ ul {
 
 /* 5. Navigation & Header Elements */
 .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 0.5rem;
+    padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     margin-bottom: 0;
     border-bottom: 1px solid var(--color-border);
