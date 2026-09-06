@@ -241,14 +241,14 @@
     fetch('content.json')
         .then(response => response.json())
         .then(data => {
-            if (data.hero_title) {
-                document.getElementById('js-hero-title').textContent = data.hero_title;
+            if (data.hero && data.hero.title) {
+                document.getElementById('js-hero-title').textContent = data.hero.title;
             }
-            if (data.hero_subtitle) {
-                document.getElementById('js-hero-subtitle').textContent = data.hero_subtitle;
+            if (data.hero && data.hero.subtitle) {
+                document.getElementById('js-hero-subtitle').textContent = data.hero.subtitle;
             }
-            if (data.about_text) {
-                document.getElementById('js-about-text').textContent = data.about_text;
+            if (data.about && data.about.text) {
+                document.getElementById('js-about-text').textContent = data.about.text;
             }
         })
         .catch(error => console.log('Running static fallback content'));
