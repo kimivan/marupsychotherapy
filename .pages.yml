@@ -5,6 +5,12 @@ content:
     path: "content.json"
     format: json
     fields:
+      - name: hero_title
+        label: "Hero Title"
+        type: text
+      - name: hero_subtitle
+        label: "Hero Subtitle"
+        type: text
       - name: about_text
         label: "About Me Paragraph"
         type: text
