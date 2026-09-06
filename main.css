@@ -1,5 +1,6 @@
 /* 1. Custom Properties / Design Tokens */
 :root {
+    color-scheme: light; /* Prevents unwanted browser color inversion */
     --fs-xsmall: 0.75rem;
     --fs-small: 0.875rem;
     --fs-body: 1rem;
