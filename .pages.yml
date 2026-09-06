@@ -5,28 +5,6 @@ content:
     path: "content.json"
     format: json
     fields:
-      - name: hero_badge
-        label: "Hero Badge"
-        type: string
-      - name: hero_title
-        label: "Hero Title"
-        type: text
-      - name: hero_subtitle
-        label: "Hero Subtitle"
-        type: text
       - name: about_text
         label: "About Me Paragraph"
         type: text
-      - name: session_rate
-        label: "Session Rate"
-        type: string
-      - name: faqs
-        label: "Frequently Asked Questions"
-        type: list
-        fields:
-          - name: question
-            label: "Question"
-            type: string
-          - name: answer
-            label: "Answer"
-            type: text
