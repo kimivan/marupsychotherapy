@@ -42,8 +42,8 @@
         <!-- Hero / Introductory Header -->
         <header>
             <p class="badge">Accepting new clients</p>
-            <h1>Individual therapy for adult children of immigrants navigating interpersonal stress</h1>
-            <p>Telehealth across the state of Georgia and in-person sessions coming soon to Atlanta.</p>
+            <h1 id="js-hero-title">>Individual therapy for adult children of immigrants navigating interpersonal stress</h1>
+            <p id="js-hero-subtitle">Telehealth across the state of Georgia and in-person sessions coming soon to Atlanta.</p>
             <p><a href="https://calendly.com/talkwithalice/15-minute-phone-consultation" target="_blank"
                     rel="noopener noreferrer" class="btn">
                     Schedule Free Consultation
@@ -241,6 +241,12 @@
     fetch('content.json')
         .then(response => response.json())
         .then(data => {
+            if (data.hero_title) {
+                document.getElementById('js-hero-title').textContent = data.hero_title;
+            }
+            if (data.hero_subtitle) {
+                document.getElementById('js-hero-subtitle').textContent = data.hero_subtitle;
+            }
             if (data.about_text) {
                 document.getElementById('js-about-text').textContent = data.about_text;
             }
