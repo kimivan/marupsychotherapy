@@ -1,17 +1,3 @@
 {
-  "hero_badge": "Accepting new clients",
-  "hero_title": "Individual therapy for adult children of immigrants navigating interpersonal stress",
-  "hero_subtitle": "Telehealth across the state of Georgia and in-person sessions coming soon to Atlanta.",
-  "about_text": "As a Brazilian-Korean-American therapist, I provide culturally sensitive care tailored to each individual's background and goals. My practice is built on honesty, compassion, and evidence-based approaches. I work collaboratively with clients to help them reconnect with their strengths, process difficult experiences, and create meaningful change.",
-  "session_rate": "$200 per 50-minute session.",
-  "faqs": [
-    {
-      "question": "What is your session fee and payment options?",
-      "answer": "My standard fee for individual therapy is $200 per 50-minute session, and I accept all major credit, HSA, and FSA cards."
-    },
-    {
-      "question": "Do you accept insurance?",
-      "answer": "I am out-of-network and do not bill insurance directly. However, many insurance plans offer out-of-network benefits that reimburse a portion of therapy costs."
-    }
-  ]
+  "about_text": "As a Brazilian-Korean-American therapist, I provide culturally sensitive care tailored to each individual's background and goals. My practice is built on honesty, compassion, and evidence-based approaches. I work collaboratively with clients to help them reconnect with their strengths, process difficult experiences, and create meaningful change."
 }
