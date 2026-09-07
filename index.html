@@ -245,11 +245,12 @@
                 document.getElementById('js-about-text').textContent = data.about.text;
             }
 
-            if (data.education && Array.isArray(data.education)) {
+            // Render Education List from inside the About object
+            if (data.about && data.about.education && Array.isArray(data.about.education)) {
                 const eduContainer = document.getElementById('js-education-container');
                 eduContainer.innerHTML = '';
                 
-                data.education.forEach(item => {
+                data.about.education.forEach(item => {
                     const li = document.createElement('li');
                     li.textContent = item;
                     eduContainer.appendChild(li);
