@@ -67,10 +67,7 @@
                 spending time with my husband, family, and our funny cat, Linus.</p>
 
             <p class="label"><strong>Education:</strong></p>
-            <ul>
-                <li>M.A. in Clinical Mental Health, Northwestern University</li>
-                <li>B.A. in Psychology, Georgia State University</li>
-            </ul>
+            <ul id="js-education-container"></ul>
         </section>
 
         <section id="focus-areas">
@@ -233,9 +230,6 @@
     </main>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-    <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
     fetch('content.json')
@@ -249,6 +243,17 @@
             }
             if (data.about && data.about.text) {
                 document.getElementById('js-about-text').textContent = data.about.text;
+            }
+
+            if (data.education && Array.isArray(data.education)) {
+                const eduContainer = document.getElementById('js-education-container');
+                eduContainer.innerHTML = '';
+                
+                data.education.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    eduContainer.appendChild(li);
+                });
             }
         })
         .catch(error => console.log('Running static fallback content'));
