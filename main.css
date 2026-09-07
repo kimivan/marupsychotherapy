@@ -84,7 +84,7 @@ header.hero h1 {
 }
 
 header.hero p {
-    max-width: 65ch;
+    max-width: 70ch;
 }
 
 section {
@@ -296,7 +296,7 @@ ul {
 .icon-list p {
     margin-bottom: 0;
     font-size: var(--fs-small);
-    max-width: 50ch;
+    max-width: 80ch;
     text-wrap: pretty;
 }
 
@@ -362,6 +362,12 @@ ul {
     text-wrap: pretty;
 }
 
+
+#consultation p.text-xsmall {
+    max-width: 90ch;
+    text-wrap: pretty;
+}
+
 @media (min-width: 992px) {
 
     #location-rates,
@@ -403,7 +409,7 @@ ul {
 
 /* Constrains summary text line length without pulling in the + icon */
 #faqs summary span {
-    max-width: 65ch;
+    max-width: 70ch;
     text-wrap: pretty;
 }
 
@@ -427,7 +433,7 @@ ul {
 #faqs details p,
 #faqs details ul {
     padding-bottom: 0.5rem;
-    max-width: 65ch;
+    max-width: 70ch;
     text-wrap: pretty;
 }
 
