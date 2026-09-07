@@ -241,6 +241,10 @@ ul {
     text-align: left;
 }
 
+.icon-list li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
 .icon-list .list-icon {
     grid-column: 1;
     grid-row: 1 / span 2;
@@ -263,8 +267,8 @@ ul {
     font-size: var(--fs-small);
 }
 
-#focus-areas li,
-#approach li {
+#focus-areas li:not(:last-child),
+#approach li:not(:last-child) {
     margin-bottom: 1.25rem;
 }
 
