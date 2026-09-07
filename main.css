@@ -1,21 +1,31 @@
-/* 1. Custom Properties / Design Tokens */
+/* =================================================================
+   1. Design Tokens & Custom Properties
+================================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap');
+
 :root {
+    --font-heading: 'Source Serif 4', Georgia, serif;
+    --font-body: 'Lato', sans-serif;
+
+    /* Font Sizes */
     --fs-xsmall: 0.75rem;
     /* 12px */
     --fs-small: 0.875rem;
     /* 14px */
     --fs-body: 1rem;
     /* 16px */
-    --fs-h3: 1.125rem;
-    /* 18px */
-    --fs-h2: 1.75rem;
-    /* 28px */
-    --fs-h1: 2rem;
+    --fs-h3: 0.75rem;
+    /* 12px uppercase */
+    --fs-h2: 2rem;
     /* 32px */
+    --fs-h1: 2.125rem;
+    /* 34px */
 
+    /* Line Heights */
     --lh-heading: 1.25;
     --lh-body: 1.6;
 
+    /* Colors */
     --color-text: #1e293b;
     --color-text-muted: #64748b;
     --color-badge-green: #16a34a;
@@ -25,32 +35,39 @@
     --color-btn-text: #ffffff;
     --color-btn-hover: #334155;
     --color-card-bg: #f8f9f8;
+    --color-primary: #2c4a3e;
 }
 
-@media (min-width: 48em) {
-    :root {
-        --fs-h3: 1.25rem;
-        /* 20px */
-        --fs-h2: 2.25rem;
-        /* 36px */
-        --fs-h1: 2.5rem;
-        /* 40px */
-    }
+
+/* =================================================================
+   2. Modern Reset & Base Styling
+================================================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* 2. Base Body Styling */
 body {
+    font-family: var(--font-body);
     font-size: var(--fs-body);
     line-height: var(--lh-body);
     color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
-/* 3. Layout & Containers */
+
+/* =================================================================
+   3. Layout & Containers
+================================================================= */
 .container {
     width: 100%;
     max-width: 42rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
     padding: 1.5rem 1.25rem;
 }
 
@@ -63,12 +80,17 @@ section {
     margin-bottom: 3.5rem;
 }
 
-/* 4. Typography & Text Utilities */
+
+/* =================================================================
+   4. Typography & Text Utilities
+================================================================= */
 h1,
 h2,
-h3 {
+h3,
+h4 {
+    font-family: var(--font-heading);
     line-height: var(--lh-heading);
-    font-weight: 700;
+    font-weight: 400;
     overflow-wrap: break-word;
     margin-bottom: 0.75rem;
 }
@@ -82,7 +104,15 @@ h2 {
 }
 
 h3 {
+    font-family: var(--font-body);
     font-size: var(--fs-h3);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+h4 {
+    font-size: var(--fs-body);
 }
 
 p {
@@ -93,6 +123,11 @@ p.label {
     margin-bottom: 0;
 }
 
+ul {
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+}
+
 .text-xsmall {
     font-size: var(--fs-xsmall);
 }
@@ -101,17 +136,10 @@ p.label {
     font-size: var(--fs-small);
 }
 
-ul {
-    margin-bottom: 1rem;
-    padding-left: 1.25rem;
-}
 
-#focus-areas li,
-#approach li {
-    margin-bottom: 1.25rem;
-}
-
-/* 5. Navigation & Header Elements */
+/* =================================================================
+   5. Navigation & Header Elements
+================================================================= */
 .site-nav {
     position: sticky;
     top: 0;
@@ -120,27 +148,44 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    margin-bottom: 0;
+    padding-block: 0.75rem;
     border-bottom: 1px solid var(--color-border);
 }
 
 .site-logo {
-    font-weight: 700;
-    font-size: var(--fs-h3);
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
     color: currentColor;
+}
+
+.site-logo svg.logo-icon {
+    width: 6rem;
+    height: auto;
+    display: block;
+    fill: currentColor;
 }
 
 .nav-cta {
     font-size: var(--fs-small);
 }
 
+.nav-cta svg.external-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+    stroke: currentColor;
+    flex-shrink: 0;
+}
+
 .badge {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    font-family: var(--font-body);
+    font-size: var(--fs-h3);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 .badge::before {
@@ -152,7 +197,10 @@ ul {
     border-radius: 50%;
 }
 
-/* 6. Buttons & Stacked Cards */
+
+/* =================================================================
+   6. Buttons, Lists & Components
+================================================================= */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -172,18 +220,10 @@ ul {
     background-color: var(--color-btn-hover);
 }
 
-.nav-cta svg.external-icon {
-    width: 0.875rem;
-    height: 0.875rem;
-    stroke: currentColor;
-    flex-shrink: 0;
-}
-
 .icon-list {
     display: flex;
     flex-direction: column;
     gap: 0;
-    /* Reduced from 1.25rem to bring the cards closer together */
     list-style: none;
     padding: 0;
     margin: 1.5rem 0;
@@ -206,11 +246,10 @@ ul {
     grid-row: 1 / span 2;
     width: 2rem;
     height: 2rem;
-    color: var(--color-primary, #2c4a3e);
-    margin: 0;
+    color: var(--color-primary);
 }
 
-.icon-list h3 {
+.icon-list h4 {
     grid-column: 2;
     grid-row: 1;
     margin: 0 0 0.25rem 0;
@@ -224,7 +263,15 @@ ul {
     font-size: var(--fs-small);
 }
 
-/* About Section */
+#focus-areas li,
+#approach li {
+    margin-bottom: 1.25rem;
+}
+
+
+/* =================================================================
+   7. Page Sections (About & Location)
+================================================================= */
 .about-image-container {
     width: 100%;
     margin-bottom: 1.5rem;
@@ -240,7 +287,6 @@ ul {
     display: block;
 }
 
-/* Location & Availability Section */
 .location-details {
     text-align: left;
     margin-bottom: 1.5rem;
@@ -251,18 +297,22 @@ ul {
     text-align: left;
 }
 
-/* 7. FAQ Accordion */
+
+/* =================================================================
+   8. FAQ Accordion
+================================================================= */
 #faqs details {
     border-top: 1px solid var(--color-border);
-    padding: 0.25rem 0;
+    padding-block: 0.25rem;
 }
 
 #faqs summary {
-    font-weight: 700;
-    font-size: var(--fs-h3);
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 1.125rem;
     line-height: var(--lh-heading);
     cursor: pointer;
-    padding: 0.75rem 0;
+    padding-block: 0.75rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -291,7 +341,10 @@ ul {
     padding-bottom: 0.5rem;
 }
 
-/* 8. Accessibility */
+
+/* =================================================================
+   9. Accessibility
+================================================================= */
 :focus-visible {
     outline: 2px solid var(--color-focus);
     outline-offset: 4px;
