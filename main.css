@@ -159,11 +159,10 @@ ul {
     color: currentColor;
 }
 
-.site-logo svg.logo-icon {
-    width: 6rem;
+.site-logo img.logo-icon {
+    width: 5rem;
     height: auto;
     display: block;
-    fill: currentColor;
 }
 
 .nav-cta {
