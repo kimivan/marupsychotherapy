@@ -1,11 +1,17 @@
 /* 1. Custom Properties / Design Tokens */
 :root {
     --fs-xsmall: 0.75rem;
+    /* 12px */
     --fs-small: 0.875rem;
+    /* 14px */
     --fs-body: 1rem;
+    /* 16px */
     --fs-h3: 1.125rem;
+    /* 18px */
     --fs-h2: 1.75rem;
+    /* 28px */
     --fs-h1: 2rem;
+    /* 32px */
 
     --lh-heading: 1.25;
     --lh-body: 1.6;
@@ -24,8 +30,11 @@
 @media (min-width: 48em) {
     :root {
         --fs-h3: 1.25rem;
+        /* 20px */
         --fs-h2: 2.25rem;
+        /* 36px */
         --fs-h1: 2.5rem;
+        /* 40px */
     }
 }
 
@@ -36,7 +45,7 @@ body {
     color: var(--color-text);
 }
 
-/* 3. Layout & Containers (Locked to a narrow, mobile-like max-width centered on screen) */
+/* 3. Layout & Containers */
 .container {
     width: 100%;
     max-width: 42rem;
@@ -119,7 +128,7 @@ ul {
 
 .site-logo {
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: var(--fs-h3);
     text-decoration: none;
     color: currentColor;
 }
@@ -170,7 +179,6 @@ ul {
     flex-shrink: 0;
 }
 
-/* Single column vertical stack for icon lists too */
 .icon-list {
     display: flex;
     flex-direction: column;
@@ -199,17 +207,16 @@ ul {
 
 .icon-list h3 {
     margin: 0 0 0.5rem 0;
-    font-size: 1.15rem;
+    font-size: var(--fs-body);
 }
 
 .icon-list p {
     margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: var(--fs-body);
     color: var(--color-text-muted);
 }
 
-/* About Section*/
+/* About Section */
 .about-image-container {
     width: 100%;
     margin-bottom: 1.5rem;
@@ -218,16 +225,14 @@ ul {
 .about-photo {
     width: 100%;
     aspect-ratio: 4 / 5;
-    /* Creates a balanced, professional portrait card height */
     object-fit: cover;
     object-position: center 15%;
-    /* Keeps her face and upper body nicely framed */
     border-radius: 8px;
     border: 1px solid var(--color-border);
     display: block;
 }
 
-/* Location & Availability Section (Stacked) */
+/* Location & Availability Section */
 .location-details {
     text-align: left;
     margin-bottom: 1.5rem;
@@ -251,7 +256,6 @@ ul {
     width: 100%;
     height: 300px;
 }
-
 
 /* 7. FAQ Accordion */
 #faqs details {
