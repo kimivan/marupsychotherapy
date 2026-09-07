@@ -26,8 +26,9 @@
     --lh-body: 1.6;
 
     /* Colors */
-    --color-text: #1e293b;
+    --color-text: #333;
     --color-text-muted: #64748b;
+    --color-text-heading: #111;
     --color-badge-green: #16a34a;
     --color-border: #e2e8f0;
     --color-focus: currentColor;
@@ -93,6 +94,7 @@ h4 {
     font-weight: 400;
     overflow-wrap: break-word;
     margin-bottom: 0.75rem;
+    color: var(--color-text-heading);
 }
 
 h1 {
@@ -311,6 +313,7 @@ ul {
     font-family: var(--font-heading);
     font-weight: 400;
     font-size: 1.125rem;
+    color: var(--color-text-heading);
     line-height: var(--lh-heading);
     cursor: pointer;
     padding-block: 0.75rem;
