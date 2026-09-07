@@ -22,7 +22,7 @@ content:
           - name: text
             label: "About Me Paragraph"
             type: text
-      - name: education
-        label: "Education & Training"
-        type: string
-        list: true
+          - name: education
+            label: "Education & Training"
+            type: string
+            list: true
