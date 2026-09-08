@@ -1,415 +1,444 @@
-/* =================================================================
-    1. Design Tokens & Custom Properties
-================================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap');
-
+/* ==========================================================================
+   1. GLOBAL VARIABLES & SYSTEM RESET
+   ========================================================================== */
 :root {
-    /* Typography */
-    --font-heading: 'Source Serif 4', Georgia, serif;
-    --font-body: 'Lato', sans-serif;
-
-    /* Responsive Font Sizes */
-    --fs-xsmall: 0.75rem;
-    --fs-small: 0.875rem;
-    --fs-body: 1rem;
-    --fs-h3: 0.75rem;
-    --fs-h2: clamp(2rem, 2.5vw, 2.25rem);
-    --fs-h1: clamp(2.375rem, 3.5vw, 3rem);
-
-    /* Line Heights */
-    --lh-heading: 1.25;
-    --lh-body: 1.6;
-
     /* Color Palette */
-    --color-bg-body: #ffffff;
+    --bg-nav: #f4f1ea;
+    --bg-warm: #e8e3d9;
+    /* Section Warm Sand */
+    --bg-light: #f7f5f0;
+    /* Section Soft Alabaster */
+    --bg-dark: #28352e;
+    /* Footer Dark Forest */
+
+    --color-accent: #b05c3b;
+    /* Terracotta Accent */
     --color-text: #333333;
-    --color-text-muted: #64748b;
-    --color-text-heading: #111111;
-    --color-primary: #2c4a3e;
-    --color-badge-green: #16a34a;
-    --color-border: #e2e8f0;
-    --color-focus: currentColor;
-    --color-card-bg: #f8f9f8;
+    /* Main Body Text */
+    --color-muted: #666666;
+    /* Secondary Muted Text */
+    --color-light: #e0ded8;
+    /* Light Dark-Section Text */
+    --color-border: #dcd7cd;
+    /* Hairline Borders */
 
-    /* Interactive Colors */
-    --color-btn-bg: #1e293b;
-    --color-btn-text: #ffffff;
-    --color-btn-hover: #334155;
-
-    /* Geometry & Spacing */
-    --radius-card: 8px;
-    --radius-btn: 0.375rem;
-    --spacing-section: 4.5rem;
+    /* Typography */
+    --font-serif: 'Source Serif 4', Georgia, serif;
+    --font-sans: 'Lato', -apple-system, sans-serif;
 }
 
-
-/* =================================================================
-    2. Reset & Base Layout
-================================================================= */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
-    font-family: var(--font-body);
-    font-size: var(--fs-body);
-    line-height: var(--lh-body);
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
     color: var(--color-text);
-    background-color: var(--color-bg-body);
+    background-color: var(--bg-light);
+    text-align: center;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
 }
 
-/* Fluid Responsive Container */
-.container {
+/* ==========================================================================
+   2. REUSABLE LAYOUT & TYPOGRAPHY ENGINES
+   ========================================================================== */
+.site-section {
     width: 100%;
-    max-width: 1000px;
+}
+
+.bg-warm {
+    background-color: var(--bg-warm);
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.bg-dark {
+    background-color: var(--bg-dark);
+}
+
+.section-content {
+    max-width: 680px;
     margin-inline: auto;
-    padding-inline: max(1.25rem, 4vw);
+    padding: 4.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: max-width 0.3s ease;
 }
 
-@media (min-width: 768px) {
-    .container {
-        max-width: 720px;
-    }
+/* Standardized Heading Hierarchy */
+.section-header {
+    margin-bottom: 2rem;
 }
 
-@media (min-width: 1024px) {
-    .container {
-        max-width: 1000px;
-    }
-}
-
-section {
-    margin-bottom: var(--spacing-section);
-}
-
-footer {
-    padding-block: 2rem;
-    border-top: 1px solid var(--color-border);
-}
-
-
-/* =================================================================
-    3. Typography & Heading Rhythm
-================================================================= */
-h1,
-h2,
-h3,
-h4 {
-    font-family: var(--font-heading);
-    line-height: var(--lh-heading);
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
     font-weight: 400;
-    color: var(--color-text-heading);
-    overflow-wrap: break-word;
+    line-height: 1.25;
+    margin: 0 0 0.5rem 0;
+    color: var(--color-text);
 }
 
-h1 {
-    font-size: var(--fs-h1);
-    margin-bottom: 0.75rem;
-}
-
-h2 {
-    font-size: var(--fs-h2);
-    margin-bottom: 0;
-}
-
-/* Tight spacing override when h2 is directly followed by h3 */
-h2:has(+ h3) {
+.section-subtitle {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-weight: 500;
     margin-bottom: 0.5rem;
 }
 
-h3 {
-    font-family: var(--font-body);
-    font-size: var(--fs-h3);
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 1.5rem;
+.body-muted {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--color-muted);
+    margin: 0;
 }
 
-h4 {
-    font-size: var(--fs-body);
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    padding: 0.875rem 2.25rem;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 2px;
+    transition: opacity 0.2s ease;
 }
 
-p,
-ul {
-    margin-bottom: 1rem;
+.btn-primary:hover {
+    opacity: 0.9;
 }
 
-p.label {
-    margin-bottom: 0;
-}
-
-ul {
-    padding-left: 1.25rem;
-}
-
-.text-xsmall {
-    font-size: var(--fs-xsmall);
-}
-
-.text-small {
-    font-size: var(--fs-small);
-}
-
-
-/* =================================================================
-    4. Navigation & Hero
-================================================================= */
-.site-nav {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: var(--color-bg-body);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--color-border);
-    font-size: var(--fs-small);
-    padding: 1.125rem 0;
-}
-
-.site-logo {
-    display: inline-flex;
-    align-items: center;
-}
-
-.site-logo img.logo-icon {
-    width: 5rem;
-    height: auto;
-    display: block;
-}
-
-header.hero {
-    margin-top: 3rem;
-    margin-bottom: var(--spacing-section);
-    max-width: 800px;
-}
-
-.badge {
+/* Status Badge with Green Dot */
+.status-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: var(--font-body);
-    font-size: var(--fs-h3);
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 0.75rem;
 }
 
-.badge::before {
+.status-badge::before {
     content: "";
     display: inline-block;
-    width: 0.5rem;
-    height: 0.5rem;
-    background-color: var(--color-badge-green);
+    width: 8px;
+    height: 8px;
+    background-color: #2e7d32;
+    /* Rich status green */
     border-radius: 50%;
+    flex-shrink: 0;
 }
 
-
-/* =================================================================
-    5. UI Components & Icon Cards
-================================================================= */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.375rem;
-    background-color: var(--color-btn-bg);
-    color: var(--color-btn-text);
-    padding: 0.625rem 1rem;
-    border-radius: var(--radius-btn);
-    font-size: var(--fs-small);
-    font-weight: 500;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
+/* ==========================================================================
+   3. NAVIGATION
+   ========================================================================== */
+.site-nav {
+    background-color: var(--bg-nav);
+    padding: 1.25rem 1rem;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
 }
 
-.btn:hover {
-    background-color: var(--color-btn-hover);
+/* ==========================================================================
+   4. HERO & ABOUT SECTIONS
+   ========================================================================== */
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 1rem 0;
+    max-width: 680px;
 }
 
-.icon-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    list-style: none;
-    padding: 0;
-    margin-top: 0;
+.hero .body-muted {
+    margin-bottom: 2rem;
+    max-width: 580px;
+}
+
+.avatar-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #d8d3c9;
     margin-bottom: 1.5rem;
 }
 
-.icon-list li {
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-card);
-    padding: 1.5rem;
+.avatar-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bio-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-top: 1rem;
+    max-width: 600px;
+}
+
+.education-block {
+    width: 100%;
+    max-width: 580px;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   5. REUSABLE STACK SYSTEM (AREAS OF FOCUS & APPROACH)
+   ========================================================================== */
+.item-stack {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
 }
 
-.icon-list .list-icon {
-    width: 2rem;
-    height: 2rem;
-    color: var(--color-primary);
-    flex-shrink: 0;
-    aspect-ratio: 1 / 1;
+.stack-item {
+    width: 100%;
+    max-width: 580px;
+    padding-top: 1.75rem;
+    padding-bottom: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.stack-item.centered-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-number {
     display: block;
-}
-
-.icon-list h4 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--color-accent);
     margin-bottom: 0.5rem;
 }
 
-.icon-list p {
-    margin-bottom: 0;
-    font-size: var(--fs-small);
-    text-wrap: pretty;
-}
-
-
-/* =================================================================
-    6. Content Grids & Layout Sections
-================================================================= */
-#about,
-#location-rates,
-#faqs,
-#consultation {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    align-items: start;
-}
-
-#about {
-    gap: 2.5rem;
-}
-
-.section-header {
-    margin-bottom: 0;
-    padding-top: 0;
-}
-
-.about-image-container {
-    width: 100%;
-}
-
-.about-photo {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    object-position: center 15%;
-    border-radius: var(--radius-card);
-    border: 1px solid var(--color-border);
-    display: block;
-}
-
-
-/* =================================================================
-    7. FAQ Accordion Components
-================================================================= */
-#faqs details {
-    border-top: 1px solid var(--color-border);
-    padding-block: 0.25rem;
-}
-
-#faqs summary {
-    font-family: var(--font-heading);
+.stack-item h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
     font-weight: 400;
-    font-size: 1.125rem;
-    color: var(--color-text-heading);
-    line-height: var(--lh-heading);
+    margin: 0 0 0.75rem 0;
+    color: var(--color-text);
+}
+
+.icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   6. LOCATION SECTION
+   ========================================================================== */
+.lead-text {
+    max-width: 500px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin: 0 auto 2rem auto;
+}
+
+.location-divider {
+    width: 100%;
+    max-width: 380px;
+    border: 0;
+    border-top: 1px solid var(--color-border);
+    margin: 0 auto 2.5rem auto;
+}
+
+.location-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.25rem;
+    width: 100%;
+    max-width: 480px;
+}
+
+.detail-group {
+    text-align: center;
+}
+
+.detail-label {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+}
+
+.detail-group .body-muted {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   7. FAQS ACCORDION
+   ========================================================================== */
+.faq-list {
+    width: 100%;
+    max-width: 620px;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--color-border);
+    padding-block: 1.25rem;
+    text-align: left;
+}
+
+.faq-item:first-child {
+    border-top: 1px solid var(--color-border);
+}
+
+.faq-item summary::-webkit-details-marker,
+.faq-item summary::marker {
+    display: none;
+}
+
+.faq-question {
+    list-style: none;
     cursor: pointer;
-    padding-block: 0.75rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    list-style: none;
-    width: 100%;
+    gap: 1.5rem;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--color-text);
+    line-height: 1.4;
+    user-select: none;
 }
 
-#faqs summary span,
-#faqs details p,
-#faqs details ul {
-    text-wrap: pretty;
+.faq-question:hover {
+    color: var(--color-accent);
 }
 
-#faqs summary::after {
-    content: "+";
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--color-text-muted);
-    margin-left: 1rem;
+.faq-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    color: var(--color-accent);
     flex-shrink: 0;
 }
 
-#faqs details[open] summary::after {
+.faq-toggle::before {
+    content: "+";
+}
+
+.faq-item[open] .faq-toggle::before {
     content: "−";
 }
 
-#faqs details[open] summary {
-    margin-bottom: 0.5rem;
+.faq-answer {
+    padding-top: 0.85rem;
+    padding-right: 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-muted);
+    margin: 0;
 }
 
-#faqs details p,
-#faqs details ul {
-    padding-bottom: 0.5rem;
+.faq-bullets {
+    padding-left: 1.25rem;
 }
 
+/* ==========================================================================
+   8. FOOTER & CALL TO ACTION
+   ========================================================================== */
+.site-footer {
+    background-color: var(--bg-dark);
+}
 
-/* =================================================================
-    8. Media Queries & Responsive Overrides
-================================================================= */
+.cta-section .section-title {
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+.cta-description {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--color-light);
+    margin-bottom: 2rem;
+}
+
+.crisis-disclaimer {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #a3ac9e;
+    margin-bottom: 2.5rem;
+}
+
+.copyright-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+.copyright-bar p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #8a9486;
+    letter-spacing: 0.03em;
+}
+
+/* ==========================================================================
+   9. RESPONSIVE DESKTOP LAYOUT
+   ========================================================================== */
 @media (min-width: 768px) {
-    #about {
-        grid-template-columns: 1.5fr 1fr;
-        align-items: center;
-        gap: 3.5rem;
+
+    /* Expand target 3-column container widths only */
+    .focus-areas .section-content,
+    .approach .section-content {
+        max-width: 1040px;
+        padding-block: 5.5rem;
     }
 
-    .about-image-container {
-        max-width: 340px;
-        justify-self: center;
+    .section-content {
+        padding-block: 5.5rem;
     }
-}
 
-@media (min-width: 1024px) {
-    .icon-list {
+    /* 3-Column Grid for Focus Areas & Approach */
+    .focus-areas .item-stack,
+    .approach .item-stack {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        align-items: start;
     }
 
-    .icon-list li {
-        flex-direction: column;
-        gap: 0.75rem;
+    .focus-areas .stack-item,
+    .approach .stack-item {
+        max-width: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
+        border-top: none;
     }
-
-    #location-rates,
-    #faqs,
-    #consultation {
-        grid-template-columns: 1fr 2fr;
-        gap: 3rem;
-    }
-
-    .section-header {
-        position: sticky;
-        top: 5rem;
-    }
-}
-
-
-/* =================================================================
-    9. Accessibility
-================================================================= */
-:focus-visible {
-    outline: 2px solid var(--color-focus);
-    outline-offset: 4px;
 }
