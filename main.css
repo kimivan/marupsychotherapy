@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap');
 
 :root {
-    /* Fonts */
+    /* Typography */
     --font-heading: 'Source Serif 4', Georgia, serif;
     --font-body: 'Lato', sans-serif;
 
@@ -31,12 +31,12 @@
     --color-focus: currentColor;
     --color-card-bg: #f8f9f8;
 
-    /* Button Colors */
+    /* Interactive Colors */
     --color-btn-bg: #1e293b;
     --color-btn-text: #ffffff;
     --color-btn-hover: #334155;
 
-    /* Layout & Surface Tokens */
+    /* Geometry & Spacing */
     --radius-card: 8px;
     --radius-btn: 0.375rem;
     --spacing-section: 4.5rem;
@@ -65,11 +65,24 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+/* Fluid Responsive Container */
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
     margin-inline: auto;
     padding-inline: max(1.25rem, 4vw);
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1000px;
+    }
 }
 
 section {
@@ -83,7 +96,7 @@ footer {
 
 
 /* =================================================================
-    3. Typography & Global Headers
+    3. Typography & Heading Rhythm
 ================================================================= */
 h1,
 h2,
@@ -103,12 +116,12 @@ h1 {
 
 h2 {
     font-size: var(--fs-h2);
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
 }
 
-/* Add tight spacing when h2 is directly followed by h3 */
+/* Tight spacing override when h2 is directly followed by h3 */
 h2:has(+ h3) {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.5rem;
 }
 
 h3 {
@@ -147,7 +160,7 @@ ul {
 
 
 /* =================================================================
-    4. Header & Navigation
+    4. Navigation & Hero
 ================================================================= */
 .site-nav {
     position: sticky;
@@ -202,7 +215,7 @@ header.hero {
 
 
 /* =================================================================
-    5. Interactive Elements & Components
+    5. UI Components & Icon Cards
 ================================================================= */
 .btn {
     display: inline-flex;
@@ -223,14 +236,13 @@ header.hero {
     background-color: var(--color-btn-hover);
 }
 
-/* Icon List / Cards Grid */
 .icon-list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
     list-style: none;
     padding: 0;
-    margin-top: 0 !important;
+    margin-top: 0;
     margin-bottom: 1.5rem;
 }
 
@@ -266,7 +278,7 @@ header.hero {
 
 
 /* =================================================================
-    6. Two-Column & Content Grid Sections
+    6. Content Grids & Layout Sections
 ================================================================= */
 #about,
 #location-rates,
@@ -355,9 +367,8 @@ header.hero {
 
 
 /* =================================================================
-    8. Media Queries & Responsive Layouts
+    8. Media Queries & Responsive Overrides
 ================================================================= */
-/* Tablet / Medium Screens */
 @media (min-width: 768px) {
     #about {
         grid-template-columns: 1.5fr 1fr;
@@ -371,7 +382,6 @@ header.hero {
     }
 }
 
-/* Desktop Screens */
 @media (min-width: 1024px) {
     .icon-list {
         grid-template-columns: repeat(3, 1fr);
