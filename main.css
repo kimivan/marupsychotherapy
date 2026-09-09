@@ -4,14 +4,14 @@
 :root {
     /* Color Palette */
     --bg-nav: #f4f1ea;
-    --bg-warm: #e8e3d9;
+    --bg-warm: #E6E3DA;
     /* Section Warm Sand */
-    --bg-light: #f7f5f0;
+    --bg-light: #F1EFE9;
     /* Section Soft Alabaster */
-    --bg-dark: #28352e;
+    --bg-dark: #28352E;
     /* Footer Dark Forest */
 
-    --color-accent: #b05c3b;
+    --color-accent: #A85C34;
     /* Terracotta Accent */
     --color-text: #262421;
     /* Main Body Text */
@@ -416,15 +416,19 @@ h3 {
 }
 
 .site-footer h2 {
-    color: #f7f1e2;
+    color: #F1EFE9;
     font-size: 1.8125rem;
     /* 29px */
     margin-bottom: 1rem;
 }
 
 .site-footer p {
-    color: #f7f1e2;
+    color: #C9CAC3;
     margin-bottom: 2rem;
+}
+
+.site-footer p.text-xsm {
+    color: #979B95;
 }
 
 .copyright-bar {
