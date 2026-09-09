@@ -13,6 +13,8 @@
 
     --color-accent: #A85C34;
     /* Terracotta Accent */
+    --color-muted-accent: #8B6F4E;
+    /* Terracotta Accent */
     --color-text: #262421;
     /* Main Body Text */
     --color-muted: #5c5954;
@@ -152,6 +154,7 @@ h3 {
     margin-bottom: 0.5rem;
     /* 8px */
     text-align: center;
+    color: var(--color-muted-accent);
 }
 
 .body-muted {
