@@ -409,36 +409,3 @@ body {
     letter-spacing: 0.03em;
 }
 
-/* ==========================================================================
-   9. RESPONSIVE DESKTOP LAYOUT
-   ========================================================================== */
-@media (min-width: 768px) {
-
-    /* Expand target 3-column container widths only */
-    .focus-areas .section-content,
-    .approach .section-content {
-        max-width: 1040px;
-        padding-block: 5.5rem;
-    }
-
-    .section-content {
-        padding-block: 5.5rem;
-    }
-
-    /* 3-Column Grid for Focus Areas & Approach */
-    .focus-areas .item-stack,
-    .approach .item-stack {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2.5rem;
-        align-items: start;
-    }
-
-    .focus-areas .stack-item,
-    .approach .stack-item {
-        max-width: 100%;
-        padding-top: 0;
-        padding-bottom: 0;
-        border-top: none;
-    }
-}
