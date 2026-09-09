@@ -333,6 +333,54 @@ h3 {
 }
 
 /* ==========================================================================
+   QUOTE / TESTIMONIAL SECTION
+   ========================================================================== */
+.quote-section {
+    background-color: #3C504F;
+}
+
+.quote-section .section-content {
+    padding-block: 5rem;
+}
+
+.quote-content {
+    max-width: 36.25rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.quote-text {
+    font-family: var(--font-serif);
+    font-size: 1.875rem;
+    /* ~30px */
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.35;
+    color: #fff;
+    margin: 0 0 2.25rem 0;
+}
+
+.quote-author {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    /* 12px */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #C4CACA;
+    margin-bottom: 0rem;
+}
+
+.quote-title {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: #8A9695;
+    font-weight: 400;
+}
+
+/* ==========================================================================
    7. FAQS ACCORDION
    ========================================================================== */
 .faq-list {
