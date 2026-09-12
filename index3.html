@@ -58,6 +58,7 @@
         html {
             font-size: clamp(100%, 0.84rem + 0.8vw, 131.25%);
             background-color: var(--bg-body);
+            scroll-behavior: smooth;
         }
 
         body {
@@ -117,11 +118,18 @@
             justify-content: space-between;
         }
 
-        .logo-svg {
-            height: 19px;
-            width: auto;
-            display: block;
+        .site-logo {
+            font-family: 'Pangaia', sans-serif;
+            font-weight: 600;
+            font-size: 1.35rem;
+            line-height: 1;
             color: var(--text-heading);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        .site-logo:hover {
+            opacity: 0.8;
         }
 
         .nav-badge {
@@ -501,11 +509,7 @@
 
     <header class="site-header" id="siteHeader">
         <div class="nav-container">
-            <svg class="logo-svg" viewBox="0 0 120 32" fill="none" xmlns="http://www.w3.org/2000/svg"
-                aria-label="Maru Psychotherapy Logo">
-                <text x="0" y="24" font-family="'Karla', sans-serif" font-weight="800" font-size="24"
-                    fill="currentColor" letter-spacing="2">maru</text>
-            </svg>
+            <a href="#top" class="site-logo" aria-label="Maru Psychotherapy">maru</a>
             <p class="nav-badge">Accepting New Clients</p>
         </div>
     </header>
