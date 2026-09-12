@@ -225,7 +225,7 @@ h2 {
 
 blockquote h3 {
     font-family: 'Pangaia-italic', serif;
-    font-weight: 200;
+    font-weight: 300;
     line-height: 1.333;
     letter-spacing: 0.01em;
     margin-bottom: var(--spacing-sm);
@@ -243,13 +243,6 @@ h3,
 h3 {
     font-weight: 500;
     margin-bottom: var(--spacing-xs);
-}
-
-/* Override list item headings to use the body font */
-.item-list h3 {
-    font-family: 'Karla', system-ui, -apple-system, sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.01em;
 }
 
 /* --- Body & Auxiliary Text --- */
@@ -355,6 +348,19 @@ ul {
 
 .item-list>li:last-child {
     border-bottom: none;
+}
+
+/* List item h3 (16px base, Karla font) */
+.item-list h3 {
+    font-family: 'Karla', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+}
+
+/* List item description p (14px base) */
+.item-list p {
+    font-size: 0.875rem;
 }
 
 .list-icon {
