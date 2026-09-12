@@ -49,8 +49,6 @@
             --spacing-md: 1rem;
             --spacing-lg: 1.5rem;
             --spacing-xl: 2.5rem;
-
-
         }
 
         html {
@@ -66,7 +64,6 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-
 
         @font-face {
             font-family: 'Pangaia';
@@ -216,7 +213,6 @@
         h1 {
             font-family: 'Pangaia';
             font-weight: 500;
-            /* In-between: min 28px (1.75rem), fluid 5.5vw, max 36px (2.25rem) */
             font-size: clamp(1.75rem, 5.5vw, 2.25rem);
             line-height: 1.25;
             margin-bottom: var(--spacing-sm);
@@ -226,7 +222,6 @@
         h2 {
             font-family: 'Pangaia';
             font-weight: 500;
-            /* In-between: min 26px (1.625rem), fluid 5vw, max 30px (1.875rem) */
             font-size: clamp(1.625rem, 5vw, 1.875rem);
             line-height: 1.25;
             margin-bottom: var(--spacing-xs);
@@ -251,7 +246,6 @@
             font-family: 'Pangaia';
             font-weight: 400;
             letter-spacing: 0.03em;
-            /* Replaces 1px with proportional spacing */
         }
 
         mark,
@@ -506,7 +500,7 @@
 
     <header class="site-header" id="siteHeader">
         <div class="nav-container">
-            <a href="#top" class="site-logo" aria-label="Maru Psychotherapy">maru</a>
+            <a href="#top" class="site-logo" id="logoLink" aria-label="Maru Psychotherapy">maru</a>
             <p class="nav-badge">Accepting New Clients</p>
         </div>
     </header>
@@ -876,6 +870,15 @@
             } else {
                 siteHeader.classList.remove('scrolled');
             }
+        });
+
+
+        document.getElementById('logoLink').addEventListener('click', (e) => {
+            e.preventDefault(); // Stops '#top' from appending to the URL bar
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Smoothly scrolls to the top
+            });
         });
     </script>
 </body>
