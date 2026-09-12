@@ -68,6 +68,28 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
+
+        @font-face {
+            font-family: 'Pangaia';
+            src: url('PPPAngaia-Variable.woff2') format('woff2-variations'),
+                url('PPPAngaia-Variable.woff2') format('woff2');
+            /* Specifies the full weight range supported by the file */
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pangaia-italic';
+            src: url('PPPAngaia-Variableitalic.woff2') format('woff2-variations'),
+                url('PPPAngaia-Variableitalic.woff2') format('woff2');
+            /* Specifies the full weight range supported by the file */
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+
         /* ==========================================================================
         2. NAVIGATION (Fixed, non-scaling dimensions)
         ========================================================================== */
@@ -187,15 +209,23 @@
         }
 
         h1 {
-            font-size: clamp(25px, 5.2vw, 2rem);
+            font-family: 'Pangaia';
+            font-weight: 500;
+            /* In-between: min 28px (1.75rem), fluid 5.5vw, max 36px (2.25rem) */
+            font-size: clamp(1.75rem, 5.5vw, 2.25rem);
             line-height: 1.25;
             margin-bottom: var(--spacing-sm);
+            letter-spacing: 0.02em;
         }
 
         h2 {
-            font-size: clamp(25px, 5.2vw, 1.75rem);
+            font-family: 'Pangaia';
+            font-weight: 500;
+            /* In-between: min 26px (1.625rem), fluid 5vw, max 30px (1.875rem) */
+            font-size: clamp(1.625rem, 5vw, 1.875rem);
             line-height: 1.25;
             margin-bottom: var(--spacing-xs);
+            letter-spacing: 0.02em;
         }
 
         h3 {
@@ -213,7 +243,11 @@
 
         .section-subhead {
             font-size: 1rem;
-            font-weight: bold;
+
+            font-family: 'Pangaia';
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            /* Replaces 1px with proportional spacing */
         }
 
         mark,
@@ -380,7 +414,7 @@
             font-size: 8rem;
             line-height: 1;
             font-family: Georgia, serif;
-            color: rgba(0, 0, 0, 0.05);
+            color: rgba(0, 0, 0, 0.08);
             pointer-events: none;
             z-index: 0;
         }
@@ -392,10 +426,11 @@
         }
 
         blockquote h3 {
+            font-family: 'Pangaia-italic';
+            font-weight: 300;
             font-size: 1.5rem;
             line-height: 1.333;
-            font-weight: 400;
-            font-style: italic;
+            letter-spacing: 0.01em;
             margin-bottom: var(--spacing-sm);
         }
 
