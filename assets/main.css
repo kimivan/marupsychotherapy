@@ -1,6 +1,6 @@
 /* ==========================================================================
-        1. RESET & DESIGN SYSTEM TOKENS
-        ========================================================================== */
+   1. RESET & DESIGN SYSTEM TOKENS
+   ========================================================================== */
 *,
 *::before,
 *::after {
@@ -10,16 +10,16 @@
 }
 
 :root {
-    /* Text Color Tokens */
+    /* Color Palette */
     --text-heading: rgba(0, 0, 0, 1);
     --text-body: rgba(0, 0, 0, 0.8);
     --text-label: rgba(0, 0, 0, 0.5);
 
-    /* Section Background Color Tokens */
+    /* Backgrounds */
     --bg-body: #f1f1f1;
     --bg-section-alt: #f9f9f9;
 
-    /* Spacing Tokens */
+    /* Spacing System */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
@@ -27,6 +27,7 @@
     --spacing-xl: 2.5rem;
 }
 
+/* Fluid Root Font-Size (16px Mobile -> ~21px Desktop) */
 html {
     font-size: clamp(100%, 0.84rem + 0.8vw, 131.25%);
     background-color: var(--bg-body);
@@ -41,11 +42,13 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* ==========================================================================
+   2. FONT FACES
+   ========================================================================== */
 @font-face {
     font-family: 'Pangaia';
     src: url('pangaia-variable.woff2') format('woff2-variations'),
         url('pangaia-variable.woff2') format('woff2');
-    /* Specifies the full weight range supported by the file */
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -55,16 +58,14 @@ body {
     font-family: 'Pangaia-italic';
     src: url('pangaia-variableitalic.woff2') format('woff2-variations'),
         url('pangaia-variableitalic.woff2') format('woff2');
-    /* Specifies the full weight range supported by the file */
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
 
-
 /* ==========================================================================
-        2. NAVIGATION (Fixed, non-scaling dimensions)
-        ========================================================================== */
+   3. NAVIGATION
+   ========================================================================== */
 header.site-header {
     background-color: var(--bg-body);
     width: 100%;
@@ -125,8 +126,8 @@ header.site-header.scrolled {
 }
 
 /* ==========================================================================
-        3. SECTION LAYOUT & ALTERNATING BACKGROUNDS
-        ========================================================================== */
+   4. LAYOUT & CONTAINERS
+   ========================================================================== */
 section {
     padding: 4rem 0;
     background-color: var(--bg-body);
@@ -149,7 +150,7 @@ section.hero {
     padding-right: var(--spacing-lg);
 }
 
-/* Apply text-wrap: balance directly to headings inside the container */
+/* Modern Text Wrapping */
 .container h1,
 .container h2,
 .container h3,
@@ -157,20 +158,16 @@ section.hero {
     text-wrap: balance;
 }
 
-/* Optional: Use text-wrap: pretty for body paragraphs */
 .container p {
     text-wrap: pretty;
-    /* Prevents single orphaned words on the last line */
 }
 
+/* Left-aligned content blocks */
 .item-list,
 .item-list li,
 .item-list div,
 .item-list h3,
-.item-list p {
-    text-align: left;
-}
-
+.item-list p,
 .faq-section details,
 .faq-section summary,
 .faq-section p,
@@ -184,13 +181,16 @@ section.hero {
 }
 
 .section-divider {
-    margin-left: auto;
-    margin-right: auto;
+    width: 3rem;
+    height: 3px;
+    background-color: var(--text-heading);
+    border: none;
+    margin: var(--spacing-md) auto var(--spacing-lg);
 }
 
 /* ==========================================================================
-        4. TYPOGRAPHY & TEXT ELEMENTS
-        ========================================================================== */
+   5. TYPOGRAPHY SYSTEM
+   ========================================================================== */
 h1,
 h2,
 h3,
@@ -199,52 +199,66 @@ summary {
     color: var(--text-heading);
 }
 
+/* --- TIER 1: Primary Headings --- */
 h1 {
-    font-family: 'Pangaia';
+    font-family: 'Pangaia', sans-serif;
     font-weight: 500;
-    font-size: clamp(1.75rem, 5.5vw, 2.25rem);
+    font-size: clamp(1.75rem, 1.2rem + 1.8vw, 2.125rem);
     line-height: 1.25;
     margin-bottom: var(--spacing-sm);
     letter-spacing: 0.02em;
 }
 
-h2 {
-    font-family: 'Pangaia';
-    font-weight: 500;
-    font-size: clamp(1.625rem, 5vw, 1.875rem);
+/* --- TIER 2: Secondary Headings & Quotes --- */
+h2,
+blockquote h3 {
+    font-size: clamp(1.5625rem, 1.1rem + 1.4vw, 1.6875rem);
     line-height: 1.25;
-    margin-bottom: var(--spacing-xs);
     letter-spacing: 0.02em;
 }
 
-h3 {
-    font-size: 1rem;
+h2 {
+    font-family: 'Pangaia', sans-serif;
+    font-weight: 500;
     margin-bottom: var(--spacing-xs);
 }
 
+blockquote h3 {
+    font-family: 'Pangaia-italic', serif;
+    font-weight: 200;
+    line-height: 1.333;
+    letter-spacing: 0.01em;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* --- TIER 3: Section Subheads & List Item Headings --- */
+h3,
+.section-subhead {
+    font-family: 'Pangaia', sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem;
+    letter-spacing: 0.03em;
+}
+
+h3 {
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Override list item headings to use the body font */
+.item-list h3 {
+    font-family: 'Karla', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+/* --- Body & Auxiliary Text --- */
 p {
     font-size: 1rem;
 }
 
 p+p {
     margin-top: var(--spacing-md);
-}
-
-.section-subhead {
-    font-size: 1rem;
-    font-family: 'Pangaia';
-    font-weight: 400;
-    letter-spacing: 0.03em;
-}
-
-mark,
-.highlight {
-    display: inline;
-    background-color: rgba(0, 0, 0, 0.075);
-    padding: 0;
-    border-radius: 2px;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
 }
 
 .small-text {
@@ -256,16 +270,31 @@ mark,
     font-size: 0.75rem;
 }
 
-.no-margin {
-    margin: 0;
+.label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: var(--text-label);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-xs);
 }
 
-.mt-xl {
-    margin-top: var(--spacing-xl);
+.label+p,
+.label+ul,
+.label+address,
+.label+a {
+    margin-top: 0;
 }
 
-.icon-sprite {
-    display: none;
+mark,
+.highlight {
+    display: inline;
+    background-color: rgba(0, 0, 0, 0.075);
+    padding: 0;
+    border-radius: 2px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
 }
 
 .badge {
@@ -288,35 +317,9 @@ mark,
     flex-shrink: 0;
 }
 
-.label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-    color: var(--text-label);
-    margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-xs);
-}
-
-.label+p,
-.label+ul,
-.label+address,
-.label+a {
-    margin-top: 0;
-}
-
-.section-divider {
-    width: 3rem;
-    height: 3px;
-    background-color: var(--text-heading);
-    border: none;
-    margin-top: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
-}
-
 /* ==========================================================================
-        5. INTERACTIVE & LIST COMPONENTS
-        ========================================================================== */
+   6. INTERACTIVE & LIST COMPONENTS
+   ========================================================================== */
 a {
     color: inherit;
 }
@@ -366,8 +369,8 @@ address {
 }
 
 /* ==========================================================================
-        6. MEDIA & TESTIMONIALS
-        ========================================================================== */
+   7. MEDIA & TESTIMONIALS
+   ========================================================================== */
 .avatar-container {
     margin-bottom: var(--spacing-md);
 }
@@ -400,7 +403,7 @@ address {
     transform: translateX(-50%);
     font-size: 8rem;
     line-height: 1;
-    font-family: 'Pangaia-italic';
+    font-family: 'Pangaia-italic', serif;
     color: rgba(0, 0, 0, 0.08);
     pointer-events: none;
     z-index: 0;
@@ -412,22 +415,13 @@ address {
     z-index: 1;
 }
 
-blockquote h3 {
-    font-family: 'Pangaia-italic';
-    font-weight: 300;
-    font-size: 1.5rem;
-    line-height: 1.333;
-    letter-spacing: 0.01em;
-    margin-bottom: var(--spacing-sm);
-}
-
 .testimonial-author span {
     display: block;
 }
 
 /* ==========================================================================
-        7. ACCORDIONS (FAQ)
-        ========================================================================== */
+   8. ACCORDIONS (FAQ)
+   ========================================================================== */
 details {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     text-align: left;
@@ -470,15 +464,25 @@ details ul {
     list-style: disc;
     list-style-position: outside;
     padding-left: var(--spacing-lg);
-    margin-top: 0;
-    margin-bottom: var(--spacing-md);
 }
 
 /* ==========================================================================
-        8. FOOTER
-        ========================================================================== */
+   9. FOOTER & UTILITIES
+   ========================================================================== */
 footer {
     padding: 3rem 0 var(--spacing-xl);
     background-color: var(--bg-body);
     text-align: center;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.mt-xl {
+    margin-top: var(--spacing-xl);
+}
+
+.icon-sprite {
+    display: none;
 }
