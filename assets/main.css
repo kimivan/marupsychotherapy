@@ -140,7 +140,6 @@ section:nth-of-type(even) {
 
 section.hero {
     padding: 4rem 0 5rem;
-    text-wrap: pretty;
 }
 
 .container {
@@ -148,6 +147,20 @@ section.hero {
     margin: 0 auto;
     padding-left: var(--spacing-lg);
     padding-right: var(--spacing-lg);
+}
+
+/* Apply text-wrap: balance directly to headings inside the container */
+.container h1,
+.container h2,
+.container h3,
+.container .hero-headline {
+    text-wrap: balance;
+}
+
+/* Optional: Use text-wrap: pretty for body paragraphs */
+.container p {
+    text-wrap: pretty;
+    /* Prevents single orphaned words on the last line */
 }
 
 .item-list,
