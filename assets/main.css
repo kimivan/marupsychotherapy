@@ -1,0 +1,471 @@
+/* ==========================================================================
+        1. RESET & DESIGN SYSTEM TOKENS
+        ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Text Color Tokens */
+    --text-heading: rgba(0, 0, 0, 1);
+    --text-body: rgba(0, 0, 0, 0.8);
+    --text-label: rgba(0, 0, 0, 0.5);
+
+    /* Section Background Color Tokens */
+    --bg-body: #f1f1f1;
+    --bg-section-alt: #f9f9f9;
+
+    /* Spacing Tokens */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2.5rem;
+}
+
+html {
+    font-size: clamp(100%, 0.84rem + 0.8vw, 131.25%);
+    background-color: var(--bg-body);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Karla', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    color: var(--text-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+    font-family: 'Pangaia';
+    src: url('pangaia-variable.woff2') format('woff2-variations'),
+        url('pangaia-variable.woff2') format('woff2');
+    /* Specifies the full weight range supported by the file */
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pangaia-italic';
+    src: url('pangaia-variableitalic.woff2') format('woff2-variations'),
+        url('pangaia-variableitalic.woff2') format('woff2');
+    /* Specifies the full weight range supported by the file */
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+        2. NAVIGATION (Fixed, non-scaling dimensions)
+        ========================================================================== */
+header.site-header {
+    background-color: var(--bg-body);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+header.site-header.scrolled {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    border-bottom-color: transparent;
+}
+
+.nav-container {
+    max-width: 37rem;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-logo {
+    font-family: 'Pangaia', sans-serif;
+    font-weight: 500;
+    font-size: 1.35rem;
+    line-height: 1;
+    color: var(--text-heading);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+}
+
+.site-logo:hover {
+    opacity: 0.8;
+}
+
+.nav-badge {
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    text-transform: uppercase;
+    gap: 6px;
+    margin: 0;
+    color: var(--text-body);
+}
+
+.nav-badge::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+        3. SECTION LAYOUT & ALTERNATING BACKGROUNDS
+        ========================================================================== */
+section {
+    padding: 4rem 0;
+    background-color: var(--bg-body);
+    width: 100%;
+    text-align: center;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--bg-section-alt);
+}
+
+section.hero {
+    padding: 4rem 0 5rem;
+    text-wrap: pretty;
+}
+
+.container {
+    max-width: 37rem;
+    margin: 0 auto;
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+}
+
+.item-list,
+.item-list li,
+.item-list div,
+.item-list h3,
+.item-list p {
+    text-align: left;
+}
+
+.faq-section details,
+.faq-section summary,
+.faq-section p,
+.faq-section ul {
+    text-align: left;
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: center;
+}
+
+.section-divider {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==========================================================================
+        4. TYPOGRAPHY & TEXT ELEMENTS
+        ========================================================================== */
+h1,
+h2,
+h3,
+.section-subhead,
+summary {
+    color: var(--text-heading);
+}
+
+h1 {
+    font-family: 'Pangaia';
+    font-weight: 500;
+    font-size: clamp(1.75rem, 5.5vw, 2.25rem);
+    line-height: 1.25;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 0.02em;
+}
+
+h2 {
+    font-family: 'Pangaia';
+    font-weight: 500;
+    font-size: clamp(1.625rem, 5vw, 1.875rem);
+    line-height: 1.25;
+    margin-bottom: var(--spacing-xs);
+    letter-spacing: 0.02em;
+}
+
+h3 {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+p {
+    font-size: 1rem;
+}
+
+p+p {
+    margin-top: var(--spacing-md);
+}
+
+.section-subhead {
+    font-size: 1rem;
+    font-family: 'Pangaia';
+    font-weight: 400;
+    letter-spacing: 0.03em;
+}
+
+mark,
+.highlight {
+    display: inline;
+    background-color: rgba(0, 0, 0, 0.075);
+    padding: 0;
+    border-radius: 2px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.small-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.xsmall-text {
+    font-size: 0.75rem;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.mt-xl {
+    margin-top: var(--spacing-xl);
+}
+
+.icon-sprite {
+    display: none;
+}
+
+.badge {
+    display: inline-flex;
+    font-size: 0.75rem;
+    line-height: 1.333;
+    text-transform: uppercase;
+    align-items: center;
+    gap: 0.5em;
+    margin: 0;
+}
+
+.badge::before {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: var(--text-label);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-xs);
+}
+
+.label+p,
+.label+ul,
+.label+address,
+.label+a {
+    margin-top: 0;
+}
+
+.section-divider {
+    width: 3rem;
+    height: 3px;
+    background-color: var(--text-heading);
+    border: none;
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ==========================================================================
+        5. INTERACTIVE & LIST COMPONENTS
+        ========================================================================== */
+a {
+    color: inherit;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin-top: var(--spacing-lg);
+    text-decoration: none;
+    background-color: var(--text-heading);
+    color: rgba(255, 255, 255, 1);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+ul {
+    list-style: none;
+}
+
+.item-list>li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.item-list>li:last-child {
+    border-bottom: none;
+}
+
+.list-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+address {
+    font-style: normal;
+}
+
+/* ==========================================================================
+        6. MEDIA & TESTIMONIALS
+        ========================================================================== */
+.avatar-container {
+    margin-bottom: var(--spacing-md);
+}
+
+.avatar-circle {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+}
+
+.avatar-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial {
+    position: relative;
+    padding-top: calc(var(--spacing-xl) + var(--spacing-md));
+}
+
+.testimonial::before {
+    content: "“";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8rem;
+    line-height: 1;
+    font-family: 'Pangaia-italic';
+    color: rgba(0, 0, 0, 0.08);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.testimonial blockquote,
+.testimonial figcaption {
+    position: relative;
+    z-index: 1;
+}
+
+blockquote h3 {
+    font-family: 'Pangaia-italic';
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 1.333;
+    letter-spacing: 0.01em;
+    margin-bottom: var(--spacing-sm);
+}
+
+.testimonial-author span {
+    display: block;
+}
+
+/* ==========================================================================
+        7. ACCORDIONS (FAQ)
+        ========================================================================== */
+details {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+details:last-of-type {
+    border-bottom: none;
+}
+
+summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+    font-weight: bold;
+    padding: var(--spacing-md) 0;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: "+";
+    transition: transform 0.2s ease;
+}
+
+details[open] summary::after {
+    content: "\2212";
+}
+
+details p,
+details ul {
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+}
+
+details ul {
+    list-style: disc;
+    list-style-position: outside;
+    padding-left: var(--spacing-lg);
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+}
+
+/* ==========================================================================
+        8. FOOTER
+        ========================================================================== */
+footer {
+    padding: 3rem 0 var(--spacing-xl);
+    background-color: var(--bg-body);
+    text-align: center;
+}
