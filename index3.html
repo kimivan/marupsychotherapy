@@ -33,7 +33,7 @@
             /* Text Color Tokens */
             --text-heading: rgba(0, 0, 0, 1);
             --text-body: rgba(0, 0, 0, 0.8);
-            --text-label: rgba(0, 0, 0, 0.6);
+            --text-label: rgba(0, 0, 0, 0.5);
 
             /* Section Background Color Tokens */
             --bg-body: #f1f1f1;
@@ -140,8 +140,11 @@
         }
 
         section.hero {
-            padding-top: 4rem;
-            padding-bottom: 4rem;
+            /* Mobile keeps the current compact spacing; padding grows toward
+               --rhythm-hero (6rem) as the viewport gets large enough to have
+               room for it, giving the hero real emphasis on tablet/desktop. */
+            padding-top: clamp(4rem, 14vw, var(--rhythm-hero));
+            padding-bottom: clamp(4rem, 14vw, var(--rhythm-hero));
             text-wrap: pretty;
         }
 
@@ -244,6 +247,14 @@
 
         .no-margin {
             margin: 0;
+        }
+
+        .mt-xl {
+            margin-top: var(--spacing-xl);
+        }
+
+        .icon-sprite {
+            display: none;
         }
 
         .badge {
@@ -450,7 +461,7 @@
     </header>
 
     <!-- Icon sprite: defines the clock icon once so it isn't hand-copied in every list item below -->
-    <svg style="display:none" aria-hidden="true">
+    <svg class="icon-sprite" aria-hidden="true">
         <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10" />
@@ -491,7 +502,7 @@
                 family, and our funny cat, Linus.
             </p>
             <p class="label">Education</p>
-            <ul style="list-style-type: none; padding: 0;">
+            <ul>
                 <li class="small-text">M.A. in Clinical Mental Health, Northwestern University</li>
                 <li class="small-text">B.A. in Psychology, Georgia State University</li>
             </ul>
@@ -765,7 +776,7 @@
     <!-- Schedule Consultation -->
     <section id="consultation">
         <div class="container">
-            <h2>Schedule Free Consultation</h2>
+            <h2>Schedule Consultation</h2>
             <hr class="section-divider">
             <p>
                 I offer a free 15-minute phone consultation. This call is an opportunity to discuss what brings you to
@@ -793,11 +804,11 @@
                 <a class="small-text" href="mailto:admin@marupsychotherapy.com">admin@marupsychotherapy.com</a>
             </address>
 
-            <p class="label" style="margin-top: var(--spacing-lg);">Follow Us</p>
+            <p class="label">Follow Us</p>
             <a class="small-text" href="https://instagram.com/maru_psychotherapy" target="_blank"
                 rel="noopener">Instagram</a>
 
-            <p class="xsmall-text" style="margin-top: var(--spacing-xl);">&copy; <span id="year"></span> Maru
+            <p class="xsmall-text mt-xl">&copy; <span id="year"></span> Maru
                 Psychotherapy LLC. All rights reserved.</p>
         </div>
     </footer>
