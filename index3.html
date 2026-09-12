@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maru Psychotherapy | Individual Therapy & Counseling Atlanta, GA</title>
     <meta name="description"
-        content="Individual therapy for adult children of immigrants navigating interpersonal stress. Telehealth across Georgia, with in-person sessions coming soon to Atlanta." />
-    <meta property="og:title" content="Maru Psychotherapy | Individual Therapy & Counseling Atlanta, GA" />
+        content="Individual therapy for adult children of immigrants navigating interpersonal stress. Telehealth across Georgia, with in-person sessions coming soon to Atlanta.">
+    <meta property="og:title" content="Maru Psychotherapy | Individual Therapy & Counseling Atlanta, GA">
     <meta property="og:description"
-        content="Individual therapy for adult children of immigrants navigating interpersonal stress. Telehealth across Georgia, with in-person sessions coming soon to Atlanta." />
-    <meta property="og:type" content="website" />
+        content="Individual therapy for adult children of immigrants navigating interpersonal stress. Telehealth across Georgia, with in-person sessions coming soon to Atlanta.">
+    <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,11 +74,9 @@
             top: 0;
             z-index: 10;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            /* Added transition for smooth shadow activation */
             transition: box-shadow 0.3s ease, border-color 0.3s ease;
         }
 
-        /* Shorter, slightly darker drop shadow activated via JS on scroll */
         header.site-header.scrolled {
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
             border-bottom-color: transparent;
@@ -87,7 +85,6 @@
         .nav-container {
             max-width: 37rem;
             margin: 0 auto;
-            /* Using fixed pixels so nav padding doesn't scale with fluid root font-size */
             padding: 16px 24px;
             display: flex;
             align-items: center;
@@ -95,7 +92,6 @@
         }
 
         .logo-svg {
-            /* Fixed height in pixels to remain constant */
             height: 19px;
             width: auto;
             display: block;
@@ -103,7 +99,6 @@
         }
 
         .nav-badge {
-            /* Fixed font size in pixels so it doesn't scale */
             font-size: 14px;
             display: inline-flex;
             line-height: 1.333;
@@ -132,7 +127,6 @@
             background-color: var(--bg-body);
             width: 100%;
             text-align: center;
-            /* Center-align everything by default */
         }
 
         section:nth-of-type(even) {
@@ -140,9 +134,6 @@
         }
 
         section.hero {
-            /* Mobile keeps the current compact spacing; padding grows toward
-               --rhythm-hero (6rem) as the viewport gets large enough to have
-               room for it, giving the hero real emphasis on tablet/desktop. */
             padding-top: clamp(4rem, 14vw, var(--rhythm-hero));
             padding-bottom: clamp(4rem, 14vw, var(--rhythm-hero));
             text-wrap: pretty;
@@ -155,7 +146,6 @@
             padding-right: var(--spacing-lg);
         }
 
-        /* Ensure item lists and their contents remain left-aligned */
         .item-list,
         .item-list li,
         .item-list div,
@@ -164,7 +154,6 @@
             text-align: left;
         }
 
-        /* Ensure FAQ accordion contents remain left-aligned */
         .faq-section details,
         .faq-section summary,
         .faq-section p,
@@ -194,15 +183,12 @@
         }
 
         h1 {
-            /* Fluidly scales between 1.5rem on narrow phones and 2rem once the
-               viewport is wide enough that the container hits its max-width. */
             font-size: clamp(25px, 5.2vw, 2rem);
             line-height: 1.25;
             margin-bottom: var(--spacing-sm);
         }
 
         h2 {
-            /* Scales alongside h1, staying proportionally a bit smaller at every size. */
             font-size: clamp(25px, 5.2vw, 1.75rem);
             line-height: 1.25;
             margin-bottom: var(--spacing-xs);
@@ -376,6 +362,31 @@
             object-fit: cover;
         }
 
+        .testimonial {
+            position: relative;
+            padding-top: calc(var(--spacing-xl) + var(--spacing-md));
+        }
+
+        .testimonial::before {
+            content: "“";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 8rem;
+            line-height: 1;
+            font-family: Georgia, serif;
+            color: rgba(0, 0, 0, 0.05);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .testimonial blockquote,
+        .testimonial figcaption {
+            position: relative;
+            z-index: 1;
+        }
+
         blockquote p {
             font-size: 1.5rem;
             line-height: 1.333;
@@ -460,12 +471,11 @@
         </div>
     </header>
 
-    <!-- Icon sprite: defines the clock icon once so it isn't hand-copied in every list item below -->
     <svg class="icon-sprite" aria-hidden="true">
         <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10" />
-            <path d="M12 8v4l3 3" />
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 8v4l3 3"></path>
         </symbol>
     </svg>
 
@@ -518,7 +528,7 @@
             <ul class="item-list">
                 <li>
                     <svg class="list-icon" aria-hidden="true">
-                        <use href="#icon-clock" />
+                        <use href="#icon-clock"></use>
                     </svg>
                     <div>
                         <h3>Intergenerational &amp; Racial Trauma</h3>
@@ -530,7 +540,7 @@
                 </li>
                 <li>
                     <svg class="list-icon" aria-hidden="true">
-                        <use href="#icon-clock" />
+                        <use href="#icon-clock"></use>
                     </svg>
                     <div>
                         <h3>Relational Trauma &amp; Complex PTSD</h3>
@@ -542,7 +552,7 @@
                 </li>
                 <li>
                     <svg class="list-icon" aria-hidden="true">
-                        <use href="#icon-clock" />
+                        <use href="#icon-clock"></use>
                     </svg>
                     <div>
                         <h3>Burnout &amp; Anxiety</h3>
@@ -566,7 +576,7 @@
             <ul class="item-list">
                 <li>
                     <svg class="list-icon" aria-hidden="true">
-                        <use href="#icon-clock" />
+                        <use href="#icon-clock"></use>
                     </svg>
                     <div>
                         <h3>Relational &amp; Experiential</h3>
@@ -579,7 +589,7 @@
                 </li>
                 <li>
                     <svg class="list-icon" aria-hidden="true">
-                        <use href="#icon-clock" />
+                        <use href="#icon-clock"></use>
                     </svg>
                     <div>
                         <h3>Cognitive &amp; Somatic</h3>
@@ -592,7 +602,7 @@
                 </li>
                 <li>
                     <svg class="list-icon" aria-hidden="true">
-                        <use href="#icon-clock" />
+                        <use href="#icon-clock"></use>
                     </svg>
                     <div>
                         <h3>Trauma Processing</h3>
@@ -816,7 +826,6 @@
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Toggle drop shadow class on header based on scroll position
         const siteHeader = document.getElementById('siteHeader');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 10) {
