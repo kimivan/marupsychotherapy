@@ -5,6 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maru Psychotherapy | Individual Therapy & Counseling Atlanta, GA</title>
+    <meta name="description"
+        content="Individual therapy for adult children of immigrants navigating interpersonal stress. Telehealth across Georgia, with in-person sessions coming soon to Atlanta." />
+    <meta property="og:title" content="Maru Psychotherapy | Individual Therapy & Counseling Atlanta, GA" />
+    <meta property="og:description"
+        content="Individual therapy for adult children of immigrants navigating interpersonal stress. Telehealth across Georgia, with in-person sessions coming soon to Atlanta." />
+    <meta property="og:type" content="website" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -185,13 +191,16 @@
         }
 
         h1 {
-            font-size: 2rem;
+            /* Fluidly scales between 1.5rem on narrow phones and 2rem once the
+               viewport is wide enough that the container hits its max-width. */
+            font-size: clamp(1.5rem, 6.6vw, 2rem);
             line-height: 1.25;
             margin-bottom: var(--spacing-sm);
         }
 
         h2 {
-            font-size: 1.75rem;
+            /* Scales alongside h1, staying proportionally a bit smaller at every size. */
+            font-size: clamp(1.3rem, 5.5vw, 1.75rem);
             line-height: 1.25;
             margin-bottom: var(--spacing-xs);
         }
@@ -440,6 +449,15 @@
         </div>
     </header>
 
+    <!-- Icon sprite: defines the clock icon once so it isn't hand-copied in every list item below -->
+    <svg style="display:none" aria-hidden="true">
+        <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 8v4l3 3" />
+        </symbol>
+    </svg>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -488,10 +506,8 @@
             <hr class="section-divider">
             <ul class="item-list">
                 <li>
-                    <svg class="list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 8v4l3 3" />
+                    <svg class="list-icon" aria-hidden="true">
+                        <use href="#icon-clock" />
                     </svg>
                     <div>
                         <h3>Intergenerational &amp; Racial Trauma</h3>
@@ -502,10 +518,8 @@
                     </div>
                 </li>
                 <li>
-                    <svg class="list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 8v4l3 3" />
+                    <svg class="list-icon" aria-hidden="true">
+                        <use href="#icon-clock" />
                     </svg>
                     <div>
                         <h3>Relational Trauma &amp; Complex PTSD</h3>
@@ -516,10 +530,8 @@
                     </div>
                 </li>
                 <li>
-                    <svg class="list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 8v4l3 3" />
+                    <svg class="list-icon" aria-hidden="true">
+                        <use href="#icon-clock" />
                     </svg>
                     <div>
                         <h3>Burnout &amp; Anxiety</h3>
@@ -542,10 +554,8 @@
             <hr class="section-divider">
             <ul class="item-list">
                 <li>
-                    <svg class="list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 8v4l3 3" />
+                    <svg class="list-icon" aria-hidden="true">
+                        <use href="#icon-clock" />
                     </svg>
                     <div>
                         <h3>Relational &amp; Experiential</h3>
@@ -557,10 +567,8 @@
                     </div>
                 </li>
                 <li>
-                    <svg class="list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 8v4l3 3" />
+                    <svg class="list-icon" aria-hidden="true">
+                        <use href="#icon-clock" />
                     </svg>
                     <div>
                         <h3>Cognitive &amp; Somatic</h3>
@@ -572,10 +580,8 @@
                     </div>
                 </li>
                 <li>
-                    <svg class="list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 8v4l3 3" />
+                    <svg class="list-icon" aria-hidden="true">
+                        <use href="#icon-clock" />
                     </svg>
                     <div>
                         <h3>Trauma Processing</h3>
@@ -667,13 +673,13 @@
 
             <details>
                 <summary>How do I get started?</summary>
-                <p class="small-text">Please fill out the contact form to request a free 15-minute consultation. I will
-                    follow up via email within 1-2 business days to confirm our scheduled call. During our consultation,
-                    we
-                    will discuss your goals, answer any questions, and determine the best path forward - whether that
-                    means scheduling an initial session or connecting you with a trusted colleague. If you prefer to
-                    communicate via email rather than a call, I can send a few initial questions to help decide if
-                    we are a good fit.</p>
+                <p class="small-text">Click the "Schedule Free Consultation" button below to request your free
+                    15-minute call. I will follow up via email within 1-2 business days to confirm our scheduled
+                    time. During our consultation, we will discuss your goals, answer any questions, and determine
+                    the best path forward - whether that means scheduling an initial session or connecting you with
+                    a trusted colleague. If you'd prefer to communicate over email rather than a call, just mention
+                    that when you reach out, and I can send a few initial questions to help us decide if we are a
+                    good fit.</p>
             </details>
 
             <details>
@@ -775,7 +781,8 @@
                 Lifeline.
             </p>
 
-            <a href="#consultation" class="btn">Schedule Free Consultation</a>
+            <a href="mailto:admin@marupsychotherapy.com?subject=Free%2015-Minute%20Consultation%20Request&amp;body=Hi%20Alice%2C%0A%0AI'd%20like%20to%20schedule%20a%20free%2015-minute%20consultation.%0A%0AName%3A%0APreferred%20times%3A%0A"
+                class="btn">Schedule Free Consultation</a>
         </div>
     </section>
 
