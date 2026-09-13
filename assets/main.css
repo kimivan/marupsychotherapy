@@ -132,20 +132,20 @@ h2,
 
 h1 {
     font-size: var(--font-size-xl);
-    line-height: 1.142;
+    line-height: 1.2;
     margin-bottom: var(--space-8);
 }
 
 h2 {
     font-size: var(--font-size-lg);
-    line-height: 1.333;
+    line-height: 1.2;
     margin-bottom: var(--space-8);
 }
 
 h3,
 .section-subhead {
     font-size: var(--font-size-md);
-    line-height: 1.333;
+    line-height: 1.2;
     margin-bottom: var(--space-16);
 }
 
