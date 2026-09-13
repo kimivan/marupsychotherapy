@@ -146,20 +146,23 @@ section.hero {
 .container {
     max-width: 37rem;
     margin: 0 auto;
-    padding-left: var(--spacing-lg);
-    padding-right: var(--spacing-lg);
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-/* Modern Text Wrapping */
-.container h1,
-.container h2,
-.container h3,
-.container .hero-headline {
-    text-wrap: balance;
-}
-
-.container p {
+/* 2. Catch ALL body elements (p, address, blockquote, li, dt, figcaption, etc.) */
+.container * {
     text-wrap: pretty;
+}
+
+/* 3. Override headings to use balanced wrapping */
+.container :is(h1, h2, h3, h4, h5, h6, .hero-headline, summary) {
+    text-wrap: balanced;
+}
+
+/* 4. Reset inline tags so they inherit wrapping cleanly from parent block */
+.container :is(span, a, mark, code, time, strong, em) {
+    text-wrap: inherit;
 }
 
 /* Left-aligned content blocks */
