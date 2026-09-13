@@ -77,7 +77,7 @@ body {
 }
 
 section {
-    padding-block: var(--space-48);
+    padding: 4rem 0;
     background-color: var(--bg-body);
     width: 100%;
     text-align: center;
@@ -87,14 +87,10 @@ section:nth-of-type(even) {
     background-color: var(--bg-section-alt);
 }
 
-section.hero {
-    padding-block: clamp(4rem, 8vw, 7rem);
-}
-
 .container {
     max-width: 37rem;
     margin-inline: auto;
-    padding: 0 var(--space-16);
+    padding: 0 1rem;
 }
 
 /* Prevent trailing margins from expanding section bottom padding */
@@ -108,8 +104,8 @@ section.hero {
     background-color: var(--text-heading);
     border: none;
     margin-inline: auto;
-    margin-top: var(--space-24);
-    margin-bottom: var(--space-24);
+    margin-bottom: 2rem;
+
 }
 
 /* ==========================================================================
@@ -121,73 +117,53 @@ h3,
 h4,
 h5,
 h6,
-.section-subhead,
-summary {
-    color: var(--text-heading);
-}
+p {
+    margin-bottom: 1.5rem;
 
-h1,
-h2,
-.section-subhead {
-    font-family: 'Pangaia', Georgia, serif;
 }
 
 h1 {
+    font-family: 'Pangaia', Georgia, serif;
     font-size: clamp(1.75rem, 1.35rem + 1.7vw, 2.1875rem);
     /* 28px up to 35px */
-    line-height: 1.21;
-    margin-bottom: var(--space-8);
+    line-height: 1.2;
     text-wrap: balance;
     letter-spacing: 0.03em;
     font-weight: 500;
 }
 
 h2 {
+    font-family: 'Pangaia', Georgia, serif;
     font-size: clamp(1.5rem, 1.25rem + 0.9vw, 1.75rem);
     /* 24px up to 28px */
-    line-height: 1;
-    margin-bottom: var(--space-8);
+    line-height: 1.3;
+    margin-bottom: 0;
     letter-spacing: 0.02em;
     font-weight: 500;
 }
 
-h3,
-.section-subhead {
-    font-size: var(--font-size-md);
-    line-height: 1.2;
-    margin-bottom: var(--space-16);
-    letter-spacing: 0.01em;
-    font-weight: 400;
-}
-
-p {
-    margin-bottom: var(--space-24);
-}
-
-.section-subhead,
-summary,
-p {
-    text-wrap: pretty;
-}
-
-.small-text {
-    font-size: var(--font-size-sm);
-    line-height: 1.714;
-}
-
-.xsmall-text {
-    font-size: var(--font-size-xs);
-    line-height: 1.333;
+h3 {
+    font-size: 1rem;
 }
 
 .label {
     font-size: var(--font-size-xs);
-    line-height: 1.333;
+    line-height: 1.5;
     color: var(--text-label);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 600;
-    margin-bottom: var(--space-4);
+    margin-bottom: 0;
+}
+
+.small-text {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+}
+
+.xsmall-text {
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
 }
 
 address {
@@ -288,6 +264,10 @@ ul {
 /* ==========================================================================
    6. HERO SPECIFIC OVERRIDES
    ========================================================================== */
+section.hero {
+    padding: 5rem 0;
+}
+
 .highlight {
     display: inline;
     background-color: rgba(0, 0, 0, 0.06);
@@ -297,9 +277,11 @@ ul {
     -webkit-box-decoration-break: clone;
 }
 
-.hero p {
-    margin-bottom: var(--space-20);
+.hero h1 {
+    margin-bottom: 1rem;
 }
+
+
 
 /* ==========================================================================
    7. ABOUT
@@ -310,7 +292,7 @@ ul {
     border-radius: 50%;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.5);
-    margin: 0 auto var(--space-16);
+    margin: 0 auto 1rem;
 }
 
 .avatar-circle img {
@@ -324,15 +306,13 @@ ul {
    ========================================================================== */
 .item-list {
     text-align: left;
-    margin-bottom: var(--space-24);
 }
 
-.item-list>li {
+.item-list li {
     display: flex;
     align-items: flex-start;
-    gap: var(--space-16);
-    padding-block: var(--space-20);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
 }
 
 .item-list>li:first-child {
@@ -345,11 +325,7 @@ ul {
 }
 
 .item-list h3 {
-    font-size: var(--font-size-base);
-    line-height: 1.5;
-    font-family: 'Karla', sans-serif;
-    font-weight: 700;
-    margin-bottom: var(--space-4);
+    margin: 0;
 }
 
 .item-list p {
@@ -357,10 +333,11 @@ ul {
 }
 
 .list-icon {
-    width: 1.7rem;
-    height: 1.7rem;
+    width: 1.5rem;
+    height: 1.5rem;
     flex-shrink: 0;
-    margin-top: 0.5rem;
+    margin-right: 1rem;
+    margin-top: 0.25rem;
 }
 
 /* ==========================================================================
@@ -371,7 +348,7 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: var(--space-32);
+
 }
 
 .testimonial::before {
@@ -389,7 +366,7 @@ ul {
 
 .testimonial blockquote {
     position: relative;
-    margin-top: var(--space-24);
+    padding-top: 3.5rem;
 }
 
 .testimonial blockquote h3 {
@@ -410,6 +387,7 @@ ul {
 details {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     text-align: left;
+    padding: 0.75rem 0;
 }
 
 details:last-of-type {
@@ -423,9 +401,9 @@ summary {
     cursor: pointer;
     list-style: none;
     font-weight: bold;
-    padding-block: var(--space-12);
     text-align: left;
     font-size: var(--font-size-base);
+
 }
 
 summary::-webkit-details-marker {
@@ -445,28 +423,23 @@ details[open] summary::after {
     content: "\2212";
 }
 
-details p {
-    margin-bottom: var(--space-16);
-}
-
 details ul {
     list-style: disc;
     list-style-position: outside;
-    padding-left: var(--space-16);
-    margin-bottom: var(--space-16);
+    padding-left: 1rem;
 }
 
 /* ==========================================================================
    11. FOOTER
    ========================================================================== */
 footer {
-    padding-block: var(--space-48);
     background-color: var(--bg-body);
     width: 100%;
     text-align: center;
+    padding: 5rem 0;
 }
 
 footer a {
     display: block;
-    margin-bottom: var(--space-24);
+    margin-bottom: 1.5rem;
 }
