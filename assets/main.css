@@ -317,7 +317,7 @@ a {
 .btn {
     display: inline-block;
     font-size: 0.875rem;
-    font-weight: bold;
+    font-weight: 500;
     margin-top: var(--spacing-lg);
     text-decoration: none;
     background-color: var(--text-heading);
