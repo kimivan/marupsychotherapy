@@ -449,6 +449,10 @@ details[open] summary::after {
     content: "\2212";
 }
 
+details p {
+    margin-bottom: var(--space-16);
+}
+
 details ul {
     list-style: disc;
     list-style-position: outside;
