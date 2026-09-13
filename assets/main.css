@@ -210,23 +210,20 @@ h1 {
 }
 
 /* --- TIER 2: Secondary Headings & Quotes --- */
-h2,
-blockquote h3 {
+h2 {
+    font-family: 'Pangaia', sans-serif;
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
     font-size: clamp(1.5625rem, 1.1rem + 1.4vw, 1.6875rem);
     line-height: 1.25;
     letter-spacing: 0.02em;
 }
 
-h2 {
-    font-family: 'Pangaia', sans-serif;
-    font-weight: 500;
-    margin-bottom: var(--spacing-xs);
-}
-
 blockquote h3 {
+    font-size: clamp(1.5625rem, 1.1rem + 1.4vw, 1.5rem);
     font-family: 'Pangaia-italic', serif;
     font-weight: 300;
-    line-height: 1.333;
+    line-height: 1.25;
     letter-spacing: 0.01em;
     margin-bottom: var(--spacing-sm);
 }
