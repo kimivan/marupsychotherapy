@@ -232,15 +232,15 @@ blockquote h3 {
 }
 
 /* --- TIER 3: Section Subheads & List Item Headings --- */
-h3,
 .section-subhead {
     font-family: 'Pangaia', sans-serif;
-    font-weight: 400;
-    font-size: 1.125rem;
+    font-weight: 500;
+    font-size: 1rem;
     letter-spacing: 0.03em;
 }
 
 h3 {
+    font-size: 1rem;
     font-weight: 500;
     margin-bottom: var(--spacing-xs);
 }
