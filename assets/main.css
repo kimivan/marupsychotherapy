@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. RESET & DESIGN SYSTEM TOKENS
+   1. DESIGN SYSTEM TOKENS & RESET
    ========================================================================== */
 *,
 *::before,
@@ -10,6 +10,11 @@
 }
 
 :root {
+    /* Fonts */
+    --font-heading: 'Pangaia', sans-serif;
+    --font-heading-italic: 'Pangaia-italic', serif;
+    --font-body: 'Karla', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
     /* Color Palette */
     --text-heading: rgba(0, 0, 0, 1);
     --text-body: rgba(0, 0, 0, 0.8);
@@ -25,6 +30,10 @@
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
     --spacing-xl: 2.5rem;
+
+    /* Text Wrapping Defaults */
+    --headline-wrap: balance;
+    --body-wrap: pretty;
 }
 
 /* Fluid Root Font-Size (16px Mobile -> ~21px Desktop) */
@@ -35,7 +44,7 @@ html {
 }
 
 body {
-    font-family: 'Karla', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--font-body);
     line-height: 1.5;
     color: var(--text-body);
     -webkit-font-smoothing: antialiased;
@@ -48,7 +57,7 @@ body {
 @font-face {
     font-family: 'Pangaia';
     src: url('pangaia-variable.woff2') format('woff2-variations'),
-        url('pangaia-variable.woff2') format('woff2');
+         url('pangaia-variable.woff2') format('woff2');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -57,7 +66,7 @@ body {
 @font-face {
     font-family: 'Pangaia-italic';
     src: url('pangaia-variableitalic.woff2') format('woff2-variations'),
-        url('pangaia-variableitalic.woff2') format('woff2');
+         url('pangaia-variableitalic.woff2') format('woff2');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -82,16 +91,14 @@ header.site-header.scrolled {
 }
 
 .nav-container {
-    max-width: 37rem;
-    margin: 0 auto;
-    padding: 18px 24px;
+    padding-block: 1.125rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .site-logo {
-    font-family: 'Pangaia', sans-serif;
+    font-family: var(--font-heading);
     font-weight: 500;
     font-size: 1.35rem;
     line-height: 1;
@@ -104,32 +111,11 @@ header.site-header.scrolled {
     opacity: 0.8;
 }
 
-.nav-badge {
-    font-size: 14px;
-    display: inline-flex;
-    align-items: center;
-    line-height: 1;
-    text-transform: uppercase;
-    gap: 6px;
-    margin: 0;
-    color: var(--text-body);
-}
-
-.nav-badge::before {
-    content: "";
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
 /* ==========================================================================
    4. LAYOUT & CONTAINERS
    ========================================================================== */
 section {
-    padding: 4rem 0;
+    padding-block: 4rem;
     background-color: var(--bg-body);
     width: 100%;
     text-align: center;
@@ -140,47 +126,38 @@ section:nth-of-type(even) {
 }
 
 section.hero {
-    padding: 4rem 0 5rem;
+    padding-block: 4rem 5rem;
 }
 
-.container {
+/* Unified Container Sizing & Horizontal Alignment */
+:is(.container, .nav-container) {
     max-width: 37rem;
-    margin: 0 auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin-inline: auto;
+    padding-inline: var(--spacing-md);
 }
 
-/* 2. Catch ALL body elements (p, address, blockquote, li, dt, figcaption, etc.) */
+/* Universal Text Wrapping inside Containers */
 .container * {
-    text-wrap: pretty;
+    text-wrap: var(--body-wrap);
 }
 
-/* 3. Override headings to use balanced wrapping */
 .container :is(h1, h2, h3, h4, h5, h6, .hero-headline, summary) {
-    text-wrap: balanced;
+    text-wrap: var(--headline-wrap);
 }
 
-/* 4. Reset inline tags so they inherit wrapping cleanly from parent block */
 .container :is(span, a, mark, code, time, strong, em) {
     text-wrap: inherit;
 }
 
-/* Left-aligned content blocks */
-.item-list,
-.item-list li,
-.item-list div,
-.item-list h3,
-.item-list p,
-.faq-section details,
-.faq-section summary,
-.faq-section p,
-.faq-section ul {
+/* Left-Aligned Component Sub-trees */
+:is(.item-list, .faq-section) :is(*, ::before, ::after) {
     text-align: left;
 }
 
 .avatar-container {
     display: flex;
     justify-content: center;
+    margin-bottom: var(--spacing-md);
 }
 
 .section-divider {
@@ -194,63 +171,62 @@ section.hero {
 /* ==========================================================================
    5. TYPOGRAPHY SYSTEM
    ========================================================================== */
-h1,
-h2,
-h3,
-.section-subhead,
-summary {
+/* Text Color Reset */
+h1, h2, h3, h4, h5, h6, .section-subhead, summary {
     color: var(--text-heading);
 }
 
-/* --- TIER 1: Primary Headings --- */
-h1 {
-    font-family: 'Pangaia', sans-serif;
+/* Tier 1 & 2: Primary, Secondary & Section Subheads (Pangaia) */
+:is(h1, h2, .section-subhead) {
+    font-family: var(--font-heading);
     font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+h1 {
     font-size: clamp(1.75rem, 1.2rem + 1.8vw, 2.125rem);
     line-height: 1.25;
     margin-bottom: var(--spacing-sm);
-    letter-spacing: 0.02em;
 }
 
-/* --- TIER 2: Secondary Headings & Quotes --- */
 h2 {
-    font-family: 'Pangaia', sans-serif;
-    font-weight: 500;
-    margin-bottom: var(--spacing-xs);
     font-size: clamp(1.5625rem, 1.1rem + 1.4vw, 1.6875rem);
     line-height: 1.25;
-    letter-spacing: 0.02em;
+    margin-bottom: var(--spacing-xs);
 }
 
+.section-subhead {
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+}
+
+/* Tier 3 & Below: Minor Headings (Karla) */
+:is(h3, h4, h5, h6) {
+    font-family: var(--font-body);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Exception: Testimonial Quote Headings (Pangaia Italic) */
 blockquote h3 {
     font-size: clamp(1.5625rem, 1.1rem + 1.4vw, 1.5rem);
-    font-family: 'Pangaia-italic', serif;
+    font-family: var(--font-heading-italic);
     font-weight: 300;
     line-height: 1.25;
     letter-spacing: 0.03em;
     margin-bottom: var(--spacing-sm);
 }
 
-/* --- TIER 3: Section Subheads & List Item Headings --- */
-.section-subhead {
-    font-family: 'Pangaia', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    letter-spacing: 0.03em;
-}
-
-h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: var(--spacing-xs);
-}
-
-/* --- Body & Auxiliary Text --- */
+/* Body & Auxiliary Text */
 p {
     font-size: 1rem;
 }
 
-p+p {
+p + p {
     margin-top: var(--spacing-md);
 }
 
@@ -273,10 +249,7 @@ p+p {
     margin-bottom: var(--spacing-xs);
 }
 
-.label+p,
-.label+ul,
-.label+address,
-.label+a {
+.label + :is(p, ul, address, a) {
     margin-top: 0;
 }
 
@@ -290,17 +263,19 @@ mark,
     -webkit-box-decoration-break: clone;
 }
 
-.badge {
+/* Unified Badge Component */
+:is(.badge, .nav-badge) {
     display: inline-flex;
-    font-size: 0.75rem;
-    line-height: 1.333;
-    text-transform: uppercase;
     align-items: center;
     gap: 0.5em;
+    font-size: 0.75rem;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--text-body);
     margin: 0;
 }
 
-.badge::before {
+:is(.badge, .nav-badge)::before {
     content: "";
     display: inline-block;
     width: 0.5em;
@@ -338,27 +313,23 @@ ul {
     list-style: none;
 }
 
-.item-list>li {
+.item-list > li {
     display: flex;
     align-items: flex-start;
     gap: var(--spacing-md);
-    padding: var(--spacing-md) 0;
+    padding-block: var(--spacing-md);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.item-list>li:last-child {
+.item-list > li:last-child {
     border-bottom: none;
 }
 
-/* List item h3 (16px base, Karla font) */
 .item-list h3 {
-    font-family: 'Karla', system-ui, -apple-system, sans-serif;
-    font-weight: 600;
     font-size: 1rem;
     letter-spacing: 0.01em;
 }
 
-/* List item description p (14px base) */
 .item-list p {
     font-size: 0.875rem;
 }
@@ -377,10 +348,6 @@ address {
 /* ==========================================================================
    7. MEDIA & TESTIMONIALS
    ========================================================================== */
-.avatar-container {
-    margin-bottom: var(--spacing-md);
-}
-
 .avatar-circle {
     width: 5rem;
     height: 5rem;
@@ -409,7 +376,7 @@ address {
     transform: translateX(-50%);
     font-size: 8rem;
     line-height: 1;
-    font-family: 'Pangaia-italic', serif;
+    font-family: var(--font-heading-italic);
     color: rgba(0, 0, 0, 0.08);
     pointer-events: none;
     z-index: 0;
@@ -430,7 +397,6 @@ address {
    ========================================================================== */
 details {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    text-align: left;
 }
 
 details:last-of-type {
@@ -444,7 +410,7 @@ summary {
     cursor: pointer;
     list-style: none;
     font-weight: bold;
-    padding: var(--spacing-md) 0;
+    padding-block: var(--spacing-md);
 }
 
 summary::-webkit-details-marker {
@@ -476,7 +442,7 @@ details ul {
    9. FOOTER & UTILITIES
    ========================================================================== */
 footer {
-    padding: 3rem 0 var(--spacing-xl);
+    padding-block: 3rem var(--spacing-xl);
     background-color: var(--bg-body);
     text-align: center;
 }
