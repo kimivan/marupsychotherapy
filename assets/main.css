@@ -149,8 +149,8 @@ section.hero {
     text-wrap: inherit;
 }
 
-/* Left-Aligned Component Sub-trees */
-:is(.item-list, .faq-section) :is(*, ::before, ::after) {
+/* Left-Aligned Component Sub-trees (Lists, FAQ section, Accordions) */
+:is(.item-list, .faq-section, details) :is(*, ::before, ::after) {
     text-align: left;
 }
 
@@ -397,6 +397,7 @@ address {
    ========================================================================== */
 details {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
 details:last-of-type {
@@ -411,6 +412,7 @@ summary {
     list-style: none;
     font-weight: bold;
     padding-block: var(--spacing-md);
+    text-align: left;
 }
 
 summary::-webkit-details-marker {
