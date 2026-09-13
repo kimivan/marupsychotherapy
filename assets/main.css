@@ -42,6 +42,7 @@
     /* Spacing Tokens */
     --space-4: 0.25rem;
     --space-8: 0.5rem;
+    --space-12: 0.75rem;
     --space-16: 1rem;
     --space-20: 1.25rem;
     --space-24: 1.5rem;
@@ -309,7 +310,7 @@ ul {
     display: flex;
     align-items: flex-start;
     gap: var(--space-16);
-    padding-block: var(--space-16);
+    padding-block: var(--space-12);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -405,7 +406,7 @@ summary {
     cursor: pointer;
     list-style: none;
     font-weight: bold;
-    padding-block: var(--space-8);
+    padding-block: var(--space-12);
     text-align: left;
     font-size: var(--font-size-base);
 }
