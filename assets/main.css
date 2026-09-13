@@ -87,6 +87,10 @@ section:nth-of-type(even) {
     background-color: var(--bg-section-alt);
 }
 
+section.hero {
+    padding-block: clamp(4rem, 8vw, 7rem);
+}
+
 .container {
     max-width: 37rem;
     margin-inline: auto;
