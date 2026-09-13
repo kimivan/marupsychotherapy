@@ -130,7 +130,6 @@ h1,
 h2,
 .section-subhead {
     font-family: 'Pangaia', Georgia, serif;
-    font-weight: 500;
 }
 
 h1 {
@@ -140,6 +139,7 @@ h1 {
     margin-bottom: var(--space-8);
     text-wrap: balance;
     letter-spacing: 0.03em;
+    font-weight: 500;
 }
 
 h2 {
@@ -148,6 +148,7 @@ h2 {
     line-height: 1;
     margin-bottom: var(--space-8);
     letter-spacing: 0.02em;
+    font-weight: 500;
 }
 
 h3,
@@ -156,6 +157,7 @@ h3,
     line-height: 1.2;
     margin-bottom: var(--space-16);
     letter-spacing: 0.01em;
+    font-weight: 400;
 }
 
 p {
