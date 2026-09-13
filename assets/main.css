@@ -131,13 +131,16 @@ h2,
 }
 
 h1 {
-    font-size: var(--font-size-xl);
+    font-size: clamp(1.75rem, 1.35rem + 1.7vw, 2.1875rem);
+    /* 28px up to 35px */
     line-height: 1.2;
     margin-bottom: var(--space-8);
+    text-wrap: balance;
 }
 
 h2 {
-    font-size: var(--font-size-lg);
+    font-size: clamp(1.5rem, 1.25rem + 0.9vw, 1.75rem);
+    /* 24px up to 28px */
     line-height: 1.2;
     margin-bottom: var(--space-8);
 }
@@ -151,6 +154,12 @@ h3,
 
 p {
     margin-bottom: var(--space-24);
+}
+
+.section-subhead,
+summary,
+p {
+    text-wrap: pretty;
 }
 
 .small-text {
