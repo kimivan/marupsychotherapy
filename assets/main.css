@@ -325,7 +325,7 @@ ul {
     display: flex;
     align-items: flex-start;
     gap: var(--space-16);
-    padding-block: var(--space-12);
+    padding-block: var(--space-20);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
