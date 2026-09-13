@@ -90,7 +90,7 @@ section:nth-of-type(even) {
 .container {
     max-width: 37rem;
     margin-inline: auto;
-    padding: 0 16px;
+    padding: 0 var(--space-16);
 }
 
 /* Prevent trailing margins from expanding section bottom padding */
@@ -194,7 +194,7 @@ header.site-header.scrolled {
 .nav-container {
     max-width: 37rem;
     margin-inline: auto;
-    padding: 1.125rem 16px;
+    padding: 16px var(--space-16);
     display: flex;
     align-items: center;
     justify-content: space-between;
