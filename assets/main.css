@@ -457,6 +457,7 @@ details ul {
     list-style: disc;
     list-style-position: outside;
     padding-left: var(--space-16);
+    margin-bottom: var(--space-16);
 }
 
 /* ==========================================================================
