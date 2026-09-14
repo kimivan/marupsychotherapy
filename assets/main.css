@@ -148,7 +148,7 @@ h3 {
 
 .label {
     font-size: var(--font-size-xs);
-    line-height: 1.5;
+    line-height: 2;
     color: var(--text-label);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -211,18 +211,19 @@ header.site-header.scrolled {
     opacity: 0.8;
 }
 
-.nav-badge {
+.badge {
     display: inline-flex;
     align-items: center;
     gap: 0.5em;
-    font-size: 12px;
-    line-height: 1;
+    font-size: var(--font-size-xs);
+
+    padding-bottom: 0.75rem;
     text-transform: uppercase;
     color: var(--text-body);
     margin: 0;
 }
 
-.nav-badge:before {
+.badge:before {
     content: "";
     display: inline-block;
     width: 0.5em;
@@ -265,7 +266,7 @@ ul {
    6. HERO SPECIFIC OVERRIDES
    ========================================================================== */
 section.hero {
-    padding: 5rem 0;
+    padding: 4rem 0 5rem;
 }
 
 .highlight {
@@ -422,6 +423,10 @@ summary::after {
     transition: transform 0.2s ease;
     flex-shrink: 0;
     margin-left: var(--space-16);
+}
+
+details p {
+    margin: 0.75rem 0;
 }
 
 details[open] summary::after {
