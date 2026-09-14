@@ -195,6 +195,8 @@ header.site-header.scrolled {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
 }
 
 .site-logo {
@@ -209,6 +211,28 @@ header.site-header.scrolled {
 
 .site-logo:hover {
     opacity: 0.8;
+}
+
+/* New Nav Link Styles */
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.site-nav a {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--text-body);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s ease;
+}
+
+.site-nav a:hover {
+    color: var(--text-heading);
+    opacity: 0.7;
 }
 
 .badge {
@@ -452,4 +476,10 @@ footer {
 footer a {
     display: block;
     margin-bottom: 1.5rem;
+}
+
+/* Offset sticky header height plus extra breathing room */
+section {
+    scroll-margin-top: 2rem;
+    /* Increased from 4rem for extra headroom */
 }
