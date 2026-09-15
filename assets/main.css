@@ -40,6 +40,7 @@
     --sage: #364A49;
     --navy: #1D2B36;
     --eggplant: #442E3B;
+    --border-color: #E0DBD3;
 
     /* Backgrounds */
     --bg-body: #F8F6EF;
@@ -188,7 +189,7 @@ header.site-header {
     position: sticky;
     top: 0;
     z-index: 10;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border-color);
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
@@ -266,6 +267,8 @@ a:hover {
     font-weight: 600;
     font-size: var(--font-size-sm);
     transition: background-color 0.2s ease;
+
+    text-shadow: 0px 1px 0px #6e2716;
 }
 
 .btn:hover {
@@ -357,7 +360,7 @@ section.hero {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--border-color);
     padding: 1.5rem 0;
 }
 
@@ -443,7 +446,7 @@ section.hero {
 10. ACCORDIONS (FAQ)
 ========================================================================== */
 details {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--border-color);
     text-align: left;
     padding: 0.75rem 0;
 }
