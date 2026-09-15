@@ -39,6 +39,7 @@
     --gold: #C1954C;
     --sage: #364A49;
     --navy: #1D2B36;
+    --eggplant: #442E3B;
 
     /* Backgrounds */
     --bg-body: #F8F6EF;
@@ -250,6 +251,10 @@ a {
     color: inherit;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 .btn {
     display: inline-block;
     margin-bottom: var(--space-24);
@@ -264,7 +269,7 @@ a {
 }
 
 .btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #923a24;
 }
 
 ul {
@@ -503,9 +508,12 @@ footer .label {
 }
 
 footer a {
-
     display: block;
     margin-bottom: 1.5rem;
+}
+
+footer .xsmall-text {
+    color: rgb(255, 255, 255, 0.5);
 }
 
 /* Offset sticky header height plus extra breathing room */
