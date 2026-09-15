@@ -216,7 +216,7 @@ header.site-header.scrolled {
     line-height: 1;
     color: var(--text-heading);
     text-decoration: none;
-    font-size: 24px;
+    font-size: 25px;
 }
 
 .site-logo:hover {
@@ -387,7 +387,7 @@ section.hero {
     flex-shrink: 0;
     background-color: #EAE6DF;
     border-radius: 0.75rem;
-    fill: var(--eggplant);
+    fill: var(--text-body);
 }
 
 /* ==========================================================================
