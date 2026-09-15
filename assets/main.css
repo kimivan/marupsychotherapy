@@ -479,6 +479,7 @@ summary::after {
     transition: transform 0.2s ease;
     flex-shrink: 0;
     margin-left: var(--space-16);
+    color: var(--sand);
 }
 
 details p {
