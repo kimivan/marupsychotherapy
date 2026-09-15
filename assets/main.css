@@ -382,12 +382,12 @@ section.hero {
 9. TESTIMONIAL
 ========================================================================== */
 .testimonial-section {
-    background: #1F2D3A;
-    color: #787F86;
+    background: #3C504F;
+    color: rgb(255, 255, 255, 0.4);
 }
 
 .testimonial-section .label {
-    color: #787F86;
+    color: rgb(255, 255, 255, 0.4);
 }
 
 .testimonial {
@@ -407,7 +407,7 @@ section.hero {
     font-size: 8rem;
     line-height: 1;
     font-family: 'Pangaia-italic', Georgia, serif;
-    color: #35424D;
+    color: rgb(255, 255, 255, 0.2);
     margin-top: 0;
 }
 
@@ -422,7 +422,7 @@ section.hero {
     font-size: var(--font-size-lg);
     line-height: 1.333;
     letter-spacing: 0.02em;
-    color: #FCFBF8;
+    color: rgb(255, 255, 255, 1);
 }
 
 .testimonial-author span {
