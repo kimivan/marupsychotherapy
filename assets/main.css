@@ -31,9 +31,14 @@
 
 :root {
     /* Color Palette */
-    --text-heading: #323130;
-    --text-body: #636360;
-    --text-label: #A3825C;
+    --text-heading: #091626;
+    --text-body: #343B4D;
+
+    --sand: #9E8F7C;
+    --orange: #AB422D;
+    --gold: #C1954C;
+    --sage: #364A49;
+    --navy: #1D2B36;
 
     /* Backgrounds */
     --bg-body: #F8F6EF;
@@ -101,7 +106,7 @@ section:nth-of-type(even) {
 .section-divider {
     width: 3rem;
     height: 3px;
-    background-color: #C59448;
+    background-color: var(--gold);
     border: none;
     margin-inline: auto;
     margin-bottom: 2rem;
@@ -152,7 +157,7 @@ h3 {
 .label {
     font-size: var(--font-size-xs);
     line-height: 2;
-    color: var(--text-label);
+    color: var(--sand);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 600;
@@ -249,7 +254,7 @@ a {
     display: inline-block;
     margin-bottom: var(--space-24);
     text-decoration: none;
-    background-color: #AE4A33;
+    background-color: var(--orange);
     color: #F8F6EF;
     padding: 0.5rem 1rem;
     border-radius: 4px;
@@ -375,14 +380,14 @@ section.hero {
     flex-shrink: 0;
     background-color: #F8F6EF;
     border-radius: 0.75rem;
-    fill: #A3825C;
+    fill: var(--sand);
 }
 
 /* ==========================================================================
 9. TESTIMONIAL
 ========================================================================== */
 .testimonial-section {
-    background: #3C504F;
+    background: var(--sage);
     color: rgb(255, 255, 255, 0.4);
 }
 
@@ -407,7 +412,7 @@ section.hero {
     font-size: 8rem;
     line-height: 1;
     font-family: 'Pangaia-italic', Georgia, serif;
-    color: rgb(255, 255, 255, 0.2);
+    color: rgb(255, 255, 255, 0.1);
     margin-top: 0;
 }
 
@@ -486,15 +491,15 @@ details ul {
 11. FOOTER
 ========================================================================== */
 footer {
-    background-color: #243133;
+    background-color: var(--navy);
     width: 100%;
     text-align: center;
     padding: 5rem 0;
-    color: #787F86
+    color: rgb(255, 255, 255, 1);
 }
 
 footer .label {
-    color: #787F86;
+    color: rgb(255, 255, 255, 0.7);
 }
 
 footer a {
