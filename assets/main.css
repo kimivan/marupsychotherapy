@@ -242,7 +242,6 @@ header.site-header.scrolled {
 
 .site-nav a:hover {
     color: var(--text-heading);
-    opacity: 0.7;
 }
 
 /* ==========================================================================
