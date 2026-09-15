@@ -31,13 +31,13 @@
 
 :root {
     /* Color Palette */
-    --text-heading: rgba(0, 0, 0, 1);
-    --text-body: rgba(0, 0, 0, 0.8);
-    --text-label: rgba(0, 0, 0, 0.5);
+    --text-heading: #323130;
+    --text-body: #636360;
+    --text-label: #A3825C;
 
     /* Backgrounds */
-    --bg-body: #f1f1f1;
-    --bg-section-alt: #f9f9f9;
+    --bg-body: #F8F6EF;
+    --bg-section-alt: #FCFBF8;
 
     /* Spacing Tokens */
     --space-4: 0.25rem;
@@ -101,7 +101,7 @@ section:nth-of-type(even) {
 .section-divider {
     width: 3rem;
     height: 3px;
-    background-color: var(--text-heading);
+    background-color: #C59448;
     border: none;
     margin-inline: auto;
     margin-bottom: 2rem;
@@ -130,6 +130,7 @@ h1 {
     text-wrap: balance;
     letter-spacing: 0.03em;
     font-weight: 500;
+    color: var(--text-heading);
 }
 
 h2 {
@@ -140,10 +141,12 @@ h2 {
     margin-bottom: 0;
     letter-spacing: 0.02em;
     font-weight: 500;
+    color: var(--text-heading);
 }
 
 h3 {
     font-size: 1rem;
+    color: var(--text-heading);
 }
 
 .label {
@@ -235,28 +238,6 @@ header.site-header.scrolled {
     opacity: 0.7;
 }
 
-.badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5em;
-    font-size: var(--font-size-xs);
-
-    padding-bottom: 0.75rem;
-    text-transform: uppercase;
-    color: var(--text-body);
-    margin: 0;
-}
-
-.badge:before {
-    content: "";
-    display: inline-block;
-    width: 0.5em;
-    height: 0.5em;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
 /* ==========================================================================
 5. INTERACTIVE & LIST COMPONENTS
 ========================================================================== */
@@ -268,8 +249,8 @@ a {
     display: inline-block;
     margin-bottom: var(--space-24);
     text-decoration: none;
-    background-color: var(--text-heading);
-    color: rgba(255, 255, 255, 1);
+    background-color: #AE4A33;
+    color: #F8F6EF;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     font-weight: 600;
@@ -295,7 +276,7 @@ section.hero {
 
 .highlight {
     display: inline;
-    background-color: rgba(0, 0, 0, 0.06);
+    background-color: #DDE7DE;
     padding: 0;
     border-radius: 2px;
     box-decoration-break: clone;
@@ -309,6 +290,28 @@ section.hero {
 
 .hero p {
     text-wrap: balance;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: var(--font-size-xs);
+
+    padding-bottom: 0.75rem;
+    text-transform: uppercase;
+    color: #4F4F4D;
+    margin: 0;
+}
+
+.badge:before {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #1F5134;
+    border-radius: 50%;
+    flex-shrink: 0;
 }
 
 
@@ -370,14 +373,23 @@ section.hero {
     height: 2.75rem;
     padding: 0.7rem;
     flex-shrink: 0;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #F8F6EF;
     border-radius: 0.75rem;
-    fill: rgba(0, 0, 0, 0.8);
+    fill: #A3825C;
 }
 
 /* ==========================================================================
 9. TESTIMONIAL
 ========================================================================== */
+.testimonial-section {
+    background: #1F2D3A;
+    color: #787F86;
+}
+
+.testimonial-section .label {
+    color: #787F86;
+}
+
 .testimonial {
     position: relative;
     display: flex;
@@ -395,7 +407,7 @@ section.hero {
     font-size: 8rem;
     line-height: 1;
     font-family: 'Pangaia-italic', Georgia, serif;
-    color: rgba(0, 0, 0, 0.1);
+    color: #35424D;
     margin-top: 0;
 }
 
@@ -410,6 +422,7 @@ section.hero {
     font-size: var(--font-size-lg);
     line-height: 1.333;
     letter-spacing: 0.02em;
+    color: #FCFBF8;
 }
 
 .testimonial-author span {
@@ -438,6 +451,7 @@ summary {
     font-weight: bold;
     text-align: left;
     font-size: var(--font-size-base);
+    color: var(--text-heading);
 
 }
 
@@ -472,13 +486,19 @@ details ul {
 11. FOOTER
 ========================================================================== */
 footer {
-    background-color: var(--bg-body);
+    background-color: #1F2D3A;
     width: 100%;
     text-align: center;
     padding: 5rem 0;
+    color: #787F86
+}
+
+footer .label {
+    color: #787F86;
 }
 
 footer a {
+
     display: block;
     margin-bottom: 1.5rem;
 }
