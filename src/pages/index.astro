@@ -4,7 +4,7 @@ import { marked } from "marked";
 import site from "../content/sections/site.json";
 import hero from "../content/sections/hero.json";
 import about from "../content/sections/about.json";
-import about from "../content/sections/focus.json";
+import focus from "../content/sections/focus.json";
 import approach from "../content/sections/approach.json";
 import location from "../content/sections/location.json";
 import faqs from "../content/sections/faqs.json";
@@ -96,20 +96,20 @@ import footer from "../content/sections/footer.json";
             <div class="container">
                 <div class="avatar-container">
                     <div class="avatar-circle">
-                        <img src={about.aboutImage} alt={about.aboutTitle} />
+                        <img src={about.image} alt={about.title} />
                     </div>
                 </div>
-                <h2>{about.aboutTitle}</h2>
-                <p class="section-subhead">{about.aboutSubtitle}</p>
+                <h2>{about.title}</h2>
+                <p class="section-subhead">{about.subtitle}</p>
                 <hr class="section-divider" />
-                <p>{about.aboutBio}</p>
+                <p>{about.bio}</p>
 
                 {
-                    about.aboutEducation && about.aboutEducation.length > 0 && (
+                    about.education && about.education.length > 0 && (
                         <>
                             <p class="label">Education</p>
                             <ul>
-                                {about.aboutEducation.map((degree) => (
+                                {about.education.map((degree) => (
                                     <li class="small-text">{degree}</li>
                                 ))}
                             </ul>
@@ -122,13 +122,13 @@ import footer from "../content/sections/footer.json";
         <!-- Areas of Focus Section -->
         <section id="services">
             <div class="container">
-                <h2>{services.title}</h2>
-                <p class="section-subhead">{services.subtitle}</p>
+                <h2>{focus.title}</h2>
+                <p class="section-subhead">{focus.subtitle}</p>
                 <hr class="section-divider" />
                 <ul class="item-list">
                     {
-                        services.items &&
-                            services.items.map((item) => (
+                        focus.items &&
+                            focus.items.map((item) => (
                                 <li>
                                     {item.svgPath && (
                                         <svg
