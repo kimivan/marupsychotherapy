@@ -51,7 +51,7 @@ content:
         type: string
 
   - name: about
-    label: "About"
+    label: "About Section"
     type: file
     path: "src/content/sections/about.json"
     format: json
@@ -70,9 +70,12 @@ content:
         type: text
       - name: education
         label: "Education"
-        type: list
-        field:
-          type: string
+        type: object
+        list: true
+        fields:
+          - name: item
+            label: "Degree / School"
+            type: string
 
   - name: focus
     label: "Focus"
