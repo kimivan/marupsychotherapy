@@ -1,0 +1,24 @@
+media:
+  input: public
+  output: /
+
+content:
+  - label: "Homepage"
+    type: file
+    path: "src/content/homepage.json"
+    fields:
+      - label: "Badge Text"
+        name: "badge"
+        type: string
+      - label: "Headline"
+        name: "headline"
+        type: string
+      - label: "Subheadline"
+        name: "subheadline"
+        type: string
+      - label: "Button Text"
+        name: "buttonText"
+        type: string
+      - label: "Button URL"
+        name: "buttonUrl"
+        type: string
