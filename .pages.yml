@@ -235,7 +235,7 @@ content:
         type: string
 
   - name: footer
-    label: "Footer Info"
+    label: "Footer"
     type: file
     path: "src/content/sections/footer.json"
     format: json
