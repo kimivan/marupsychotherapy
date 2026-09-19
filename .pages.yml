@@ -1,60 +1,7 @@
-media:
-  input: public
-  output: /
-
-content:
-  - name: hero
-    label: "Hero Banner"
+- name: approach
+    label: "Approach"
     type: file
-    path: "src/content/sections/hero.json"
-    format: json
-    fields:
-      - name: headlinePre
-        label: "Headline (Text Before Highlight)"
-        type: string
-      - name: headlineHighlight
-        label: "Headline (Highlighted Text)"
-        type: string
-      - name: headlinePost
-        label: "Headline (Text After Highlight)"
-        type: string
-      - name: subheadline
-        label: "Subheadline"
-        type: string
-      - name: buttonText
-        label: "Button Text"
-        type: string
-      - name: buttonUrl
-        label: "Button URL"
-        type: string
-
-  - name: about
-    label: "About Section"
-    type: file
-    path: "src/content/sections/about.json"
-    format: json
-    fields:
-      - name: aboutImage
-        label: "About Photo"
-        type: image
-      - name: aboutTitle
-        label: "About Section Title"
-        type: string
-      - name: aboutSubtitle
-        label: "About Section Subtitle"
-        type: string
-      - name: aboutBio
-        label: "About Bio Text"
-        type: text
-      - name: aboutEducation
-        label: "Education List"
-        type: string
-        list: true
-
-  - name: focus
-    label: "Areas of Focus"
-    type: file
-    path: "src/content/sections/focus.json"
+    path: "src/content/sections/approach.json"
     format: json
     fields:
       - name: title
@@ -64,12 +11,12 @@ content:
         label: "Section Subtitle"
         type: string
       - name: items
-        label: "Focus Areas"
+        label: "Approach Items"
         type: object
         list: true
         fields:
           - name: title
-            label: "Area Title"
+            label: "Item Title"
             type: string
           - name: description
             label: "Description"

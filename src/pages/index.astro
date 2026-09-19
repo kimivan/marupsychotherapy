@@ -3,6 +3,7 @@ import "../styles/main.css";
 import hero from "../content/sections/hero.json";
 import about from "../content/sections/about.json";
 import services from "../content/sections/focus.json";
+import approach from "../content/sections/approach.json";
 ---
 
 <!doctype html>
@@ -113,71 +114,37 @@ import services from "../content/sections/focus.json";
                 </ul>
             </div>
         </section>
-        <!-- Approach -->
-        <section>
+
+        <!-- Approach Section -->
+        <section id="approach">
             <div class="container">
-                <h2>Approach</h2>
-                <p class="section-subhead">How we untangle heavy patterns</p>
+                <h2>{approach.title}</h2>
+                <p class="section-subhead">{approach.subtitle}</p>
                 <hr class="section-divider" />
                 <ul class="item-list">
-                    <li>
-                        <svg
-                            class="list-icon"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 640 640"
-                            ><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-                            <path
-                                d="M528 320C528 205.1 434.9 112 320 112C205.1 112 112 205.1 112 320C112 434.9 205.1 528 320 528C434.9 528 528 434.9 528 320zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM370.7 389.1L226.4 444.6C207 452.1 187.9 433 195.4 413.6L250.9 269.3C254.2 260.8 260.8 254.2 269.3 250.9L413.6 195.4C433 187.9 452.1 207 444.6 226.4L389.1 370.7C385.8 379.2 379.2 385.8 370.7 389.1zM352 320C352 302.3 337.7 288 320 288C302.3 288 288 302.3 288 320C288 337.7 302.3 352 320 352C337.7 352 352 337.7 352 320z"
-                            ></path>
-                        </svg>
-                        <div>
-                            <h3>Relational &amp; Experiential</h3>
-                            <p class="small-text">
-                                Grounded in Psychodynamic and Person-Centered
-                                therapy to explore root causes, attachment
-                                patterns, and core relational dynamics.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <svg
-                            class="list-icon"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 640 640"
-                            ><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-                            <path
-                                d="M352 96C352 113.7 366.3 128 384 128L424 128C437.3 128 448 138.7 448 152C448 165.3 437.3 176 424 176L96 176C78.3 176 64 190.3 64 208C64 225.7 78.3 240 96 240L424 240C472.6 240 512 200.6 512 152C512 103.4 472.6 64 424 64L384 64C366.3 64 352 78.3 352 96zM416 448C416 465.7 430.3 480 448 480L480 480C533 480 576 437 576 384C576 331 533 288 480 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L480 352C497.7 352 512 366.3 512 384C512 401.7 497.7 416 480 416L448 416C430.3 416 416 430.3 416 448zM192 576L232 576C280.6 576 320 536.6 320 488C320 439.4 280.6 400 232 400L96 400C78.3 400 64 414.3 64 432C64 449.7 78.3 464 96 464L232 464C245.3 464 256 474.7 256 488C256 501.3 245.3 512 232 512L192 512C174.3 512 160 526.3 160 544C160 561.7 174.3 576 192 576z"
-                            ></path>
-                        </svg>
-                        <div>
-                            <h3>Cognitive &amp; Somatic</h3>
-                            <p class="small-text">
-                                Utilizing Cognitive Behavioral Therapy (CBT) and
-                                body-based somatic techniques to address nervous
-                                system regulation and reframe limiting beliefs.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <svg
-                            class="list-icon"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 640 640"
-                            ><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-                            <path
-                                d="M320 144C254.8 144 201.2 173.6 160.1 211.7C121.6 247.5 95 290 81.4 320C95 350 121.6 392.5 160.1 428.3C201.2 466.4 254.8 496 320 496C385.2 496 438.8 466.4 479.9 428.3C518.4 392.5 545 350 558.6 320C545 290 518.4 247.5 479.9 211.7C438.8 173.6 385.2 144 320 144zM127.4 176.6C174.5 132.8 239.2 96 320 96C400.8 96 465.5 132.8 512.6 176.6C559.4 220.1 590.7 272 605.6 307.7C608.9 315.6 608.9 324.4 605.6 332.3C590.7 368 559.4 420 512.6 463.4C465.5 507.1 400.8 544 320 544C239.2 544 174.5 507.2 127.4 463.4C80.6 419.9 49.3 368 34.4 332.3C31.1 324.4 31.1 315.6 34.4 307.7C49.3 272 80.6 220 127.4 176.6zM320 400C364.2 400 400 364.2 400 320C400 290.4 383.9 264.5 360 250.7C358.6 310.4 310.4 358.6 250.7 360C264.5 383.9 290.4 400 320 400zM240.4 311.6C242.9 311.9 245.4 312 248 312C283.3 312 312 283.3 312 248C312 245.4 311.8 242.9 311.6 240.4C274.2 244.3 244.4 274.1 240.5 311.5zM286 196.6C296.8 193.6 308.2 192.1 319.9 192.1C328.7 192.1 337.4 193 345.7 194.7C346 194.8 346.2 194.8 346.5 194.9C404.4 207.1 447.9 258.6 447.9 320.1C447.9 390.8 390.6 448.1 319.9 448.1C258.3 448.1 206.9 404.6 194.7 346.7C192.9 338.1 191.9 329.2 191.9 320.1C191.9 309.1 193.3 298.3 195.9 288.1C196.1 287.4 196.2 286.8 196.4 286.2C208.3 242.8 242.5 208.6 285.9 196.7z"
-                            ></path>
-                        </svg>
-                        <div>
-                            <h3>Trauma Processing</h3>
-                            <p class="small-text">
-                                Trained in EMDR and the Flash Technique to
-                                safely process painful memories and systemic
-                                stress without overwhelming the system.
-                            </p>
-                        </div>
-                    </li>
+                    {
+                        approach.items &&
+                            approach.items.map((item) => (
+                                <li>
+                                    {item.svgPath && (
+                                        <svg
+                                            class="list-icon"
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 640 640"
+                                        >
+                                            <path d={item.svgPath} />
+                                        </svg>
+                                    )}
+                                    <div>
+                                        <h3>{item.title}</h3>
+                                        <p class="small-text">
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                </li>
+                            ))
+                    }
                 </ul>
             </div>
         </section>
