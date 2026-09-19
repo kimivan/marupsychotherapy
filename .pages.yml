@@ -27,3 +27,28 @@ content:
       - name: buttonUrl
         label: "Button URL"
         type: string
+      - name: aboutImage
+        label: "About Photo"
+        type: image
+      - name: aboutTitle
+        label: "About Section Title"
+        type: string
+      - name: aboutSubtitle
+        label: "About Section Subtitle"
+        type: string
+      - name: aboutBio
+        label: "About Bio Text"
+        type: text
+      - name: aboutBlocks
+        label: "Info Blocks (Education, Certifications, etc.)"
+        type: list
+        fields:
+          - name: title
+            label: "Block Title (e.g. Education, Certifications)"
+            type: string
+          - name: items
+            label: "Bullet Points"
+            type: list
+            field:
+              label: "Item Text"
+              type: string
