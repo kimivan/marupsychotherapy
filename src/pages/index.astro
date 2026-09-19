@@ -216,13 +216,15 @@ import footer from "../content/sections/footer.json";
                     location.details &&
                         location.details.map((block) => (
                             <>
-                                <p class="label">{block.label}</p>
-                                <p
-                                    class="small-text"
-                                    style="white-space: pre-line;"
-                                >
-                                    {block.text}
-                                </p>
+                                <div class="sub-item">
+                                    <p class="label">{block.label}</p>
+                                    <p
+                                        class="small-text"
+                                        style="white-space: pre-line;"
+                                    >
+                                        {block.text}
+                                    </p>
+                                </div>
                             </>
                         ))
                 }
