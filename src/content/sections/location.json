@@ -1,19 +1,23 @@
 {
-    "title": "Location & Availability",
-    "subtitle": "Telehealth statewide & in-person in Atlanta",
-    "introText": "Accepting new clients for virtual therapy statewide across Georgia, with in-person appointments coming soon to Atlanta. Scheduling availability from 8:00 AM to 7:00 PM.",
-    "details": [
-        {
-            "label": "Address",
-            "text": "In-person office opening soon in Atlanta."
-        },
-        {
-            "label": "Rate",
-            "text": "$200 per 50-minute session.\nIf fee structure is a potential barrier to working together, please ask about sliding scale availability during our initial outreach."
-        },
-        {
-            "label": "Insurance",
-            "text": "I am out-of-network and do not bill insurance directly. However, many insurance plans offer out-of-network benefits that reimburse a portion of therapy costs."
-        }
-    ]
+  "title": "Location & Availability",
+  "subtitle": "Telehealth statewide & in-person in Atlanta",
+  "introText": "Accepting new clients for virtual therapy statewide across Georgia, with in-person appointments coming soon to Atlanta. Scheduling availability from 8:00 AM to 7:00 PM.",
+  "details": [
+    {
+      "label": "Address",
+      "text": "In-person office opening soon in Atlanta."
+    },
+    {
+      "label": "Rate",
+      "text": "$200 per 50-minute session.\nIf fee structure is a potential barrier to working together, please ask about sliding scale availability during our initial outreach."
+    },
+    {
+      "label": "Insurance",
+      "text": "I am out-of-network and do not bill insurance directly. However, many insurance plans offer out-of-network benefits that reimburse a portion of therapy costs."
+    },
+    {
+      "label": "something else",
+      "text": "something else"
+    }
+  ]
 }
