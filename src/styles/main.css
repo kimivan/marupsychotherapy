@@ -88,6 +88,7 @@ section {
     background-color: var(--bg-body);
     width: 100%;
     text-align: center;
+    scroll-margin-top: 2rem;
 }
 
 section:nth-of-type(even) {
@@ -100,7 +101,6 @@ section:nth-of-type(even) {
     padding: 0 1rem;
 }
 
-/* Prevent trailing margins from expanding section bottom padding */
 .container> :last-child {
     margin-bottom: 0;
 }
@@ -112,7 +112,6 @@ section:nth-of-type(even) {
     border: none;
     margin-inline: auto;
     margin-bottom: 2rem;
-
 }
 
 /* ==========================================================================
@@ -126,13 +125,11 @@ h5,
 h6,
 p {
     margin-bottom: 1.5rem;
-
 }
 
 h1 {
     font-family: 'Pangaia', Georgia, serif;
     font-size: clamp(1.75rem, 1.35rem + 1.7vw, 2.1875rem);
-    /* 28px up to 35px */
     line-height: 1.2;
     text-wrap: balance;
     letter-spacing: 0.03em;
@@ -143,7 +140,6 @@ h1 {
 h2 {
     font-family: 'Pangaia', Georgia, serif;
     font-size: clamp(1.5rem, 1.25rem + 0.9vw, 1.75rem);
-    /* 24px up to 28px */
     line-height: 1.3;
     margin-bottom: 0;
     letter-spacing: 0.02em;
@@ -223,7 +219,6 @@ header.site-header.scrolled {
     opacity: 0.8;
 }
 
-/* New Nav Link Styles */
 .site-nav {
     display: flex;
     align-items: center;
@@ -266,7 +261,6 @@ a:hover {
     font-weight: 600;
     font-size: var(--font-size-sm);
     transition: background-color 0.2s ease;
-
     text-shadow: 0px 1px 0px #6e2716;
 }
 
@@ -314,7 +308,7 @@ section.hero {
     margin: 0;
 }
 
-.badge:before {
+.badge::before {
     content: "";
     display: inline-block;
     width: 0.5em;
@@ -323,8 +317,6 @@ section.hero {
     border-radius: 50%;
     flex-shrink: 0;
 }
-
-
 
 /* ==========================================================================
 7. ABOUT
@@ -343,8 +335,6 @@ section.hero {
     height: 100%;
     object-fit: cover;
 }
-
-
 
 /* ==========================================================================
 8. ITEM LISTS
@@ -395,11 +385,11 @@ section.hero {
 ========================================================================== */
 .testimonial-section {
     background: var(--sage);
-    color: rgb(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .testimonial-section .label {
-    color: rgb(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .testimonial {
@@ -407,7 +397,6 @@ section.hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .testimonial::before {
@@ -419,7 +408,7 @@ section.hero {
     font-size: 8rem;
     line-height: 1;
     font-family: 'Pangaia-italic', Georgia, serif;
-    color: rgb(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.1);
     margin-top: 0;
 }
 
@@ -434,27 +423,24 @@ section.hero {
     font-size: var(--font-size-lg);
     line-height: 1.333;
     letter-spacing: 0.02em;
-    color: rgb(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
 }
 
 .testimonial-author span {
     display: block;
 }
 
-
 /* ==========================================================================
-10. SUBITEMS
+10. SUBITEMS & ACCORDIONS (FAQ)
 ========================================================================== */
 .sub-item p,
-.sub-item ul li {
+.sub-item ul li,
+details p,
+details ul {
     font-size: var(--font-size-sm);
     line-height: 1.5;
 }
 
-
-/* ==========================================================================
-10. ACCORDIONS (FAQ)
-========================================================================== */
 details {
     border-bottom: 1px solid var(--border-color);
     text-align: left;
@@ -475,7 +461,6 @@ summary {
     text-align: left;
     font-size: var(--font-size-base);
     color: var(--text-heading);
-
 }
 
 summary::-webkit-details-marker {
@@ -492,22 +477,18 @@ summary::after {
     color: var(--sand);
 }
 
-details p {
-    margin: 0.75rem 0;
-    font-size: var(--font-size-sm);
-    line-height: 1.5;
-}
-
 details[open] summary::after {
     content: "\2212";
+}
+
+details p {
+    margin: 0.75rem 0;
 }
 
 details ul {
     list-style: disc;
     list-style-position: outside;
     padding-left: 1rem;
-    font-size: var(--font-size-sm);
-    line-height: 1.5;
 }
 
 /* ==========================================================================
@@ -518,11 +499,11 @@ footer {
     width: 100%;
     text-align: center;
     padding: 5rem 0;
-    color: rgb(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
 }
 
 footer .label {
-    color: rgb(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 footer a {
@@ -531,11 +512,5 @@ footer a {
 }
 
 footer .xsmall-text {
-    color: rgb(255, 255, 255, 0.5);
-}
-
-/* Offset sticky header height plus extra breathing room */
-section {
-    scroll-margin-top: 2rem;
-    /* Increased from 4rem for extra headroom */
+    color: rgba(255, 255, 255, 0.5);
 }
