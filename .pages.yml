@@ -74,7 +74,7 @@ content:
         list: true
         fields:
           - name: item
-            label: "Degree / School"
+            label: "Description text"
             type: string
 
   - name: focus
