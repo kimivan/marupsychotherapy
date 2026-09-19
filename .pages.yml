@@ -41,6 +41,5 @@ content:
         type: text
       - name: aboutEducation
         label: "Education List"
-        type: list
-        items:
-          type: string
+        type: string
+        list: true
