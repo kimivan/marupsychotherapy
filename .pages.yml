@@ -29,7 +29,7 @@ content:
         type: image
 
   - name: hero
-    label: "Hero Section"
+    label: "Hero"
     type: file
     path: "src/content/sections/hero.json"
     format: json
@@ -54,7 +54,7 @@ content:
         type: string
 
   - name: about
-    label: "About Section"
+    label: "About"
     type: file
     path: "src/content/sections/about.json"
     format: json
@@ -78,7 +78,7 @@ content:
           type: string
 
   - name: focus
-    label: "Clinical Focus"
+    label: "Focus"
     type: file
     path: "src/content/sections/focus.json"
     format: json
@@ -132,7 +132,7 @@ content:
             type: string
 
   - name: location
-    label: "Location & Logistics"
+    label: "Location"
     type: file
     path: "src/content/sections/location.json"
     format: json
@@ -211,7 +211,7 @@ content:
         type: string
 
   - name: footer
-    label: "Footer"
+    label: "Footer Info"
     type: file
     path: "src/content/sections/footer.json"
     format: json
