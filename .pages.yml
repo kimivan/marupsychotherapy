@@ -183,3 +183,28 @@ content:
       - name: buttonUrl
         label: "Button Link URL"
         type: string
+
+  - name: footer
+    label: "Footer"
+    type: file
+    path: "src/content/sections/footer.json"
+    format: json
+    fields:
+      - name: contactLabel
+        label: "Contact Label"
+        type: string
+      - name: email
+        label: "Contact Email"
+        type: string
+      - name: followLabel
+        label: "Follow Label"
+        type: string
+      - name: socialName
+        label: "Social Platform Name"
+        type: string
+      - name: socialUrl
+        label: "Social Profile URL"
+        type: string
+      - name: companyName
+        label: "Company Legal Name (Copyright)"
+        type: string

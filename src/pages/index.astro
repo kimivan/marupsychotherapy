@@ -8,6 +8,7 @@ import approach from "../content/sections/approach.json";
 import location from "../content/sections/location.json";
 import faqs from "../content/sections/faqs.json";
 import consultation from "../content/sections/consultation.json";
+import footer from "../content/sections/footer.json";
 ---
 
 <!doctype html>
@@ -261,28 +262,29 @@ import consultation from "../content/sections/consultation.json";
             </div>
         </section>
 
+        <!-- Footer Section -->
         <footer>
             <div class="container">
-                <p class="label">Contact</p>
+                <p class="label">{footer.contactLabel}</p>
                 <address>
-                    <a
-                        class="small-text"
-                        href="mailto:admin@marupsychotherapy.com"
-                        >admin@marupsychotherapy.com</a
-                    >
+                    <a class="small-text" href={`mailto:${footer.email}`}>
+                        {footer.email}
+                    </a>
                 </address>
 
-                <p class="label">Follow</p>
+                <p class="label">{footer.followLabel}</p>
                 <a
                     class="small-text"
-                    href="https://instagram.com/maru_psychotherapy"
+                    href={footer.socialUrl}
                     target="_blank"
-                    rel="noopener">Instagram</a
+                    rel="noopener"
                 >
+                    {footer.socialName}
+                </a>
 
                 <p class="xsmall-text">
-                    &copy; <span id="year"></span> Maru Psychotherapy LLC. All rights
-                    reserved.
+                    &copy; <span id="year">{new Date().getFullYear()}</span>
+                    {footer.companyName}. All rights reserved.
                 </p>
             </div>
         </footer>
