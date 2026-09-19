@@ -3,7 +3,6 @@ media:
   output: /
 
 content:
-
   - name: site
     label: "SEO & Site Metadata"
     type: file
@@ -26,23 +25,26 @@ content:
     path: "src/content/sections/hero.json"
     format: json
     fields:
-      - name: headlinePre
-        label: "Headline (Text Before Highlight)"
+      - name: badge
+        label: "Badge Text"
         type: string
-      - name: headlineHighlight
-        label: "Headline (Highlighted Text)"
+      - name: title
+        label: "Main Heading"
         type: string
-      - name: headlinePost
-        label: "Headline (Text After Highlight)"
+      - name: subtitle
+        label: "Subtitle"
+        type: text
+      - name: primaryButtonText
+        label: "Primary Button Text"
         type: string
-      - name: subheadline
-        label: "Subheadline"
+      - name: primaryButtonUrl
+        label: "Primary Button URL"
         type: string
-      - name: buttonText
-        label: "Button Text"
+      - name: secondaryButtonText
+        label: "Secondary Button Text"
         type: string
-      - name: buttonUrl
-        label: "Button URL"
+      - name: secondaryButtonUrl
+        label: "Secondary Button URL"
         type: string
 
   - name: about
@@ -51,25 +53,18 @@ content:
     path: "src/content/sections/about.json"
     format: json
     fields:
-      - name: aboutImage
-        label: "About Photo"
-        type: image
-      - name: aboutTitle
-        label: "About Section Title"
+      - name: title
+        label: "Section Title"
         type: string
-      - name: aboutSubtitle
-        label: "About Section Subtitle"
+      - name: subtitle
+        label: "Section Subtitle"
         type: string
-      - name: aboutBio
-        label: "About Bio Text"
-        type: text
-      - name: aboutEducation
-        label: "Education List"
-        type: string
-        list: true
+      - name: content
+        label: "About Content (Markdown supported)"
+        type: rich-text
 
-  - name: services
-    label: "Areas of Focus"
+  - name: focus
+    label: "Clinical Focus"
     type: file
     path: "src/content/sections/focus.json"
     format: json
@@ -86,13 +81,13 @@ content:
         list: true
         fields:
           - name: title
-            label: "Area Title"
+            label: "Item Title"
             type: string
           - name: description
             label: "Description"
             type: text
           - name: svgPath
-            label: "Icon SVG Path (Optional)"
+            label: "Icon SVG Path"
             type: string
 
   - name: approach
