@@ -33,13 +33,13 @@ content:
     file: src/content/sections/hero.json
     fields:
     - name: headlinePre
-      label: Headline (Pre-Highlight)
+      label: Headline Pre
       type: string
     - name: headlineHighlight
-      label: Headline (Highlighted Text)
+      label: Headline Highlight
       type: string
     - name: headlinePost
-      label: Headline (Post-Highlight)
+      label: Headline Post
       type: string
     - name: subheadline
       label: Subheadline
