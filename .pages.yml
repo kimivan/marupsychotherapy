@@ -15,9 +15,6 @@ content:
       - name: siteDescription
         label: "Meta Description (SEO & Social Sharing)"
         type: text
-      - name: siteUrl
-        label: "Canonical Website URL"
-        type: string
       - name: faviconSvg
         label: "Favicon SVG File"
         type: image
