@@ -99,16 +99,23 @@ import footer from "../content/sections/footer.json";
                 <p>{about.bio}</p>
 
                 {
-                    about.education && about.education.length > 0 && (
-                        <>
-                            <p class="label">Education</p>
-                            <ul>
-                                {about.education.map((degree) => (
-                                    <li class="small-text">{degree}</li>
-                                ))}
-                            </ul>
-                        </>
-                    )
+                    about.listBlocks &&
+                        about.listBlocks.map(
+                            (block) =>
+                                block.items &&
+                                block.items.length > 0 && (
+                                    <>
+                                        <p class="label">{block.heading}</p>
+                                        <ul>
+                                            {block.items.map((listItem) => (
+                                                <li class="small-text">
+                                                    {listItem.item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </>
+                                ),
+                        )
                 }
             </div>
         </section>
