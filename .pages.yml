@@ -57,24 +57,26 @@ content:
         type: string
 
   - name: about
-    label: "About Section"
-    type: file
-    path: "src/content/sections/about.json"
-    format: json
+    label: About Section
+    file: src/content/sections/about.json
     fields:
     - name: image
+      label: Image
       type: image
     - name: title
+      label: Title
       type: string
     - name: subtitle
+      label: Subtitle
       type: string
     - name: bio
-      type: rich-text  # Use rich-text or text for markdown-supported blocks
+      label: Bio
+      type: text
     - name: education
+      label: Education
       type: list
-      fields:
-        - name: degree
-          type: string
+      field:
+        type: string
 
   - name: focus
     label: "Clinical Focus"
