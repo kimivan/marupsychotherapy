@@ -3,6 +3,23 @@ media:
   output: /
 
 content:
+
+  - name: site
+    label: "SEO & Site Metadata"
+    type: file
+    path: "src/content/sections/site.json"
+    format: json
+    fields:
+      - name: siteTitle
+        label: "Browser Tab Title"
+        type: string
+      - name: siteDescription
+        label: "Meta Description (SEO & Social Sharing)"
+        type: text
+      - name: siteUrl
+        label: "Canonical Website URL"
+        type: string
+
   - name: hero
     label: "Hero Banner"
     type: file

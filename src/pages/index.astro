@@ -16,7 +16,31 @@ import footer from "../content/sections/footer.json";
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Maru Psychotherapy</title>
+        <title>{site.siteTitle}</title>
+        <link rel="canonical" href={site.siteUrl} />
+        <meta name="description" content={site.siteDescription} />
+        <meta property="og:title" content={site.siteTitle} />
+        <meta property="og:description" content={site.siteDescription} />
+        <meta property="og:type" content="website" />
+
+        <link
+            rel="icon"
+            type="image/png"
+            href="assets/favicon/favicon-96x96.png"
+            sizes="96x96"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="assets/favicon/favicon.svg"
+        />
+        <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="assets/favicon/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="assets/favicon/site.webmanifest" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,6 +57,7 @@ import footer from "../content/sections/footer.json";
             />
         </noscript>
     </head>
+
     <body>
         <header class="site-header" id="siteHeader">
             <div class="nav-container">
