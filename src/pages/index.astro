@@ -105,14 +105,14 @@ import footer from "../content/sections/footer.json";
                                 block.items &&
                                 block.items.length > 0 && (
                                     <>
-                                        <p class="label">{block.heading}</p>
-                                        <ul>
-                                            {block.items.map((listItem) => (
-                                                <li class="small-text">
-                                                    {listItem.item}
-                                                </li>
-                                            ))}
-                                        </ul>
+                                        <div class="sub-item">
+                                            <p class="label">{block.heading}</p>
+                                            <ul>
+                                                {block.items.map((listItem) => (
+                                                    <li>{listItem.item}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
                                     </>
                                 ),
                         )
@@ -218,12 +218,7 @@ import footer from "../content/sections/footer.json";
                             <>
                                 <div class="sub-item">
                                     <p class="label">{block.label}</p>
-                                    <p
-                                        class="small-text"
-                                        style="white-space: pre-line;"
-                                    >
-                                        {block.text}
-                                    </p>
+                                    <p>{block.text}</p>
                                 </div>
                             </>
                         ))
