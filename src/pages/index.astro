@@ -1,11 +1,13 @@
 ---
 import "../styles/main.css";
+import { marked } from "marked";
 import hero from "../content/sections/hero.json";
 import about from "../content/sections/about.json";
 import services from "../content/sections/focus.json";
 import approach from "../content/sections/approach.json";
 import location from "../content/sections/location.json";
 import faqs from "../content/sections/faqs.json";
+import consultation from "../content/sections/consultation.json";
 ---
 
 <!doctype html>
@@ -218,40 +220,29 @@ import faqs from "../content/sections/faqs.json";
             </div>
         </section>
 
-        <!-- Schedule Consultation -->
+        <!-- Schedule Consultation Section -->
         <section id="consultation" class="section-schedule">
             <div class="container">
-                <h2>Schedule Free Consultation</h2>
-                <p class="section-subhead">
-                    Get in touch via scheduled call or email
-                </p>
+                <h2>{consultation.title}</h2>
+                <p class="section-subhead">{consultation.subtitle}</p>
                 <hr class="section-divider" />
 
-                <p>
-                    During our consultation, we'll discuss what brings you to
-                    therapy, learn more about my approach, and answer any
-                    questions you have. Choose a time below that works for you,
-                    or feel free to email me directly at <a
-                        href="mailto:admin@marupsychotherapy.com"
-                        >admin@marupsychotherapy.com</a
-                    >
-                </p>
+                <div set:html={marked(consultation.description)} />
 
-                <p class="small-text">
-                    If you require immediate psychiatric assistance, please call
-                    911 or go to your nearest emergency room and request a
-                    mental health consult. You can also contact the Georgia
-                    Crisis and Access Line at 1-800-815-4225, the Crisis Text
-                    Line by texting "HOME" to 741741, or dial 988 to reach the
-                    National Suicide and Crisis Lifeline.
-                </p>
+                {
+                    consultation.showDisclaimer && (
+                        <p class="small-text">{consultation.disclaimerText}</p>
+                    )
+                }
 
                 <a
-                    href="https://calendly.com/marupsychotherapy/15-minute-consultation"
+                    href={consultation.buttonUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="btn">Schedule Free Phone Consultation</a
+                    class="btn"
                 >
+                    {consultation.buttonText}
+                </a>
             </div>
         </section>
 

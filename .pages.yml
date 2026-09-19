@@ -155,3 +155,31 @@ content:
           - name: answer
             label: "Answer (Markdown supported for lists/links)"
             type: rich-text
+
+  - name: consultation
+    label: "Schedule Consultation"
+    type: file
+    path: "src/content/sections/consultation.json"
+    format: json
+    fields:
+      - name: title
+        label: "Section Title"
+        type: string
+      - name: subtitle
+        label: "Section Subtitle"
+        type: string
+      - name: description
+        label: "Description (Markdown supported for links)"
+        type: rich-text
+      - name: showDisclaimer
+        label: "Show Crisis Disclaimer"
+        type: boolean
+      - name: disclaimerText
+        label: "Disclaimer Text"
+        type: text
+      - name: buttonText
+        label: "Button Text"
+        type: string
+      - name: buttonUrl
+        label: "Button Link URL"
+        type: string
