@@ -54,7 +54,7 @@ content:
   - name: services
     label: "Areas of Focus"
     type: file
-    path: "src/content/sections/services.json"
+    path: "src/content/sections/focus.json"
     format: json
     fields:
       - name: title
