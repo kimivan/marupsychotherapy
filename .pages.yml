@@ -4,7 +4,7 @@ media:
 
 content:
   - name: site
-    label: "Site Metadata"
+    label: "SEO & Site Metadata"
     type: file
     path: "src/content/sections/site.json"
     format: json
@@ -19,17 +19,17 @@ content:
         label: "Canonical Website URL"
         type: string
       - name: faviconSvg
-        label: "Favicon SVG File"
-        type: image
+        label: "Favicon SVG Path"
+        type: string
       - name: faviconIco
-        label: "Favicon ICO File"
-        type: image
+        label: "Favicon ICO Path"
+        type: string
       - name: appleTouchIcon
-        label: "Apple Touch Icon File"
-        type: image
+        label: "Apple Touch Icon Path"
+        type: string
 
   - name: hero
-    label: "Hero"
+    label: "Hero Banner"
     type: file
     path: "src/content/sections/hero.json"
     format: json
@@ -57,7 +57,7 @@ content:
         type: string
 
   - name: about
-    label: "About"
+    label: "About Section"
     type: file
     path: "src/content/sections/about.json"
     format: json
@@ -73,9 +73,9 @@ content:
         type: rich-text
 
   - name: focus
-    label: "Focus"
+    label: "Clinical Focus"
     type: file
-    path: "src/content/sections/services.json"
+    path: "src/content/sections/focus.json"
     format: json
     fields:
       - name: title
@@ -127,7 +127,7 @@ content:
             type: string
 
   - name: location
-    label: "Location"
+    label: "Location & Logistics"
     type: file
     path: "src/content/sections/location.json"
     format: json
