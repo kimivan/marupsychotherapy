@@ -4,7 +4,7 @@ media:
 
 content:
   - name: hero
-    label: "1. Hero Banner"
+    label: "Hero Banner"
     type: file
     path: "src/content/sections/hero.json"
     format: json
@@ -29,7 +29,7 @@ content:
         type: string
 
   - name: about
-    label: "2. About Section"
+    label: "About Section"
     type: file
     path: "src/content/sections/about.json"
     format: json
