@@ -29,10 +29,15 @@ import homepage from "../content/homepage.json";
             </div>
         </header>
 
+        <!-- Hero Section -->
         <section class="hero">
             <div class="container">
-                <p class="badge">{homepage.badge}</p>
-                <h1>{homepage.headline}</h1>
+                <p class="badge">Accepting New Clients</p>
+                <h1>
+                    {homepage.headlinePre}<mark class="highlight"
+                        >{homepage.headlineHighlight}</mark
+                    >{homepage.headlinePost}
+                </h1>
                 <p>{homepage.subheadline}</p>
                 <a
                     href={homepage.buttonUrl}

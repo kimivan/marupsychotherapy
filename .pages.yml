@@ -7,12 +7,16 @@ content:
     label: "Homepage"
     type: file
     path: "src/content/homepage.json"
+    format: json
     fields:
-      - name: badge
-        label: "Badge Text"
+      - name: headlinePre
+        label: "Headline (Text Before Highlight)"
         type: string
-      - name: headline
-        label: "Headline"
+      - name: headlineHighlight
+        label: "Headline (Highlighted Text)"
+        type: string
+      - name: headlinePost
+        label: "Headline (Text After Highlight)"
         type: string
       - name: subheadline
         label: "Subheadline"
