@@ -73,9 +73,14 @@ import homepage from "../content/homepage.json";
                                 <p class="label">{block.title}</p>
                                 <ul>
                                     {block.items &&
-                                        block.items.map((item) => (
-                                            <li class="small-text">{item}</li>
-                                        ))}
+                                        block.items
+                                            .split("\n")
+                                            .filter(Boolean)
+                                            .map((item) => (
+                                                <li class="small-text">
+                                                    {item.trim()}
+                                                </li>
+                                            ))}
                                 </ul>
                             </>
                         ))

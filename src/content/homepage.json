@@ -12,10 +12,7 @@
     "aboutBlocks": [
         {
             "title": "Education",
-            "items": [
-                "M.A. in Clinical Mental Health, Northwestern University",
-                "B.A. in Psychology, Georgia State University"
-            ]
+            "items": "M.A. in Clinical Mental Health, Northwestern University\nB.A. in Psychology, Georgia State University"
         }
     ]
 }

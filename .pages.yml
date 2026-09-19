@@ -40,15 +40,13 @@ content:
         label: "About Bio Text"
         type: text
       - name: aboutBlocks
-        label: "Info Blocks (Education, Certifications, etc.)"
+        label: "Info Blocks"
         type: list
+        type: object
         fields:
           - name: title
-            label: "Block Title (e.g. Education, Certifications)"
+            label: "Block Title"
             type: string
           - name: items
-            label: "Bullet Points"
-            type: list
-            field:
-              label: "Item Text"
-              type: string
+            label: "Bullet Points (One per line)"
+            type: text
