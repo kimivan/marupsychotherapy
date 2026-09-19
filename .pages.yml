@@ -139,6 +139,22 @@ content:
             label: "Icon SVG Path"
             type: string
 
+  - name: testimonial
+    label: "Testimonial"
+    type: file
+    path: "src/content/sections/testimonial.json"
+    format: json
+    fields:
+      - name: testimonial_quote
+        label: Testimonial Quote
+        type: text
+      - name: testimonial_author
+        label: Testimonial Author Name
+        type: string
+      - name: testimonial_title
+        label: Testimonial Author Title
+        type: string
+
   - name: location
     label: "Location"
     type: file

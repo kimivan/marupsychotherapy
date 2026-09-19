@@ -190,15 +190,12 @@ import footer from "../content/sections/footer.json";
                 <figure class="testimonial">
                     <blockquote>
                         <h3>
-                            Alice is a calming, welcoming presence that offers
-                            unique insight for the Asian-American community.
+                            {{ testimonial_quote }}
                         </h3>
                     </blockquote>
                     <figcaption class="testimonial-author">
-                        <span class="label">Sade Ferrier</span>
-                        <span class="small-text"
-                            >Marriage &amp; Family Therapist, LMFT</span
-                        >
+                        <span class="label">{{ testimonial_author }}</span>
+                        <span class="small-text">{{ testimonial_title }}</span>
                     </figcaption>
                 </figure>
             </div>
