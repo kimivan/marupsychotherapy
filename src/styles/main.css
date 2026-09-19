@@ -1,0 +1,524 @@
+/* ==========================================================================
+1. RESET & DESIGN TOKENS
+========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Upright Variable Font */
+@font-face {
+    font-family: 'Pangaia';
+    src: url('pangaia-variable.woff2') format('woff2-variations'),
+        url('pangaia-variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Italic Variable Font */
+@font-face {
+    font-family: 'Pangaia-italic';
+    src: url('pangaia-variableitalic.woff2') format('woff2-variations'),
+        url('pangaia-variableitalic.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+    /* Color Palette */
+    --text-heading: #091626;
+    --text-body: #343B4D;
+
+    --sand: #9E8F7C;
+    --orange: #AB422D;
+    --gold: #C1954C;
+    --sage: #364A49;
+    --navy: #1D2B36;
+    --eggplant: #442E3B;
+    --border-color: #E0DBD3;
+
+    /* Backgrounds */
+    --bg-body: #F8F6EF;
+    --bg-section-alt: #FCFBF8;
+
+    /* Spacing Tokens */
+    --space-4: 0.25rem;
+    --space-8: 0.5rem;
+    --space-12: 0.75rem;
+    --space-16: 1rem;
+    --space-20: 1.25rem;
+    --space-24: 1.5rem;
+    --space-32: 2rem;
+    --space-48: 3rem;
+
+    /* Typography Scale */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-md: 1.125rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 1.75rem;
+}
+
+/* ==========================================================================
+2. BASE LAYOUT & CONTAINERS
+========================================================================== */
+html {
+    font-size: clamp(100%, 0.84rem + 0.8vw, 125%);
+    background-color: var(--bg-body);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Karla', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    color: var(--text-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+section {
+    padding: 4rem 0;
+    background-color: var(--bg-body);
+    width: 100%;
+    text-align: center;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--bg-section-alt);
+}
+
+.container {
+    max-width: 37rem;
+    margin-inline: auto;
+    padding: 0 1rem;
+}
+
+/* Prevent trailing margins from expanding section bottom padding */
+.container> :last-child {
+    margin-bottom: 0;
+}
+
+.section-divider {
+    width: 3rem;
+    height: 3px;
+    background-color: var(--gold);
+    border: none;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+
+}
+
+/* ==========================================================================
+3. TYPOGRAPHY SYSTEM
+========================================================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-bottom: 1.5rem;
+
+}
+
+h1 {
+    font-family: 'Pangaia', Georgia, serif;
+    font-size: clamp(1.75rem, 1.35rem + 1.7vw, 2.1875rem);
+    /* 28px up to 35px */
+    line-height: 1.2;
+    text-wrap: balance;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+    color: var(--text-heading);
+}
+
+h2 {
+    font-family: 'Pangaia', Georgia, serif;
+    font-size: clamp(1.5rem, 1.25rem + 0.9vw, 1.75rem);
+    /* 24px up to 28px */
+    line-height: 1.3;
+    margin-bottom: 0;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    color: var(--text-heading);
+}
+
+h3 {
+    font-size: 1rem;
+    color: var(--text-heading);
+}
+
+.label {
+    font-size: var(--font-size-xs);
+    line-height: 2;
+    color: var(--sand);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.small-text {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+}
+
+.xsmall-text {
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
+}
+
+address {
+    font-style: normal;
+}
+
+/* ==========================================================================
+4. NAVIGATION
+========================================================================== */
+header.site-header {
+    background-color: var(--bg-body);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--border-color);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+header.site-header.scrolled {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    border-bottom-color: transparent;
+}
+
+.nav-container {
+    max-width: 37rem;
+    margin-inline: auto;
+    padding: 1rem var(--space-16);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+}
+
+.site-logo {
+    font-family: 'Pangaia', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    color: var(--text-heading);
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.site-logo:hover {
+    opacity: 0.8;
+}
+
+/* New Nav Link Styles */
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.site-nav a {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--text-body);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s ease;
+}
+
+.site-nav a:hover {
+    color: var(--text-heading);
+}
+
+/* ==========================================================================
+5. INTERACTIVE & LIST COMPONENTS
+========================================================================== */
+a {
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: var(--space-24);
+    text-decoration: none;
+    background-color: var(--orange);
+    color: #F8F6EF;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    transition: background-color 0.2s ease;
+
+    text-shadow: 0px 1px 0px #6e2716;
+}
+
+.btn:hover {
+    background-color: #923a24;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: var(--space-24);
+}
+
+/* ==========================================================================
+6. HERO SPECIFIC OVERRIDES
+========================================================================== */
+section.hero {
+    padding: 4rem 0 5rem;
+}
+
+.highlight {
+    display: inline;
+    background-color: #DDE7DE;
+    padding: 0;
+    border-radius: 2px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.hero h1 {
+    margin-bottom: 1rem;
+    text-wrap: pretty;
+}
+
+.hero p {
+    text-wrap: balance;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: var(--font-size-xs);
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.badge:before {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #469E51;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+
+
+/* ==========================================================================
+7. ABOUT
+========================================================================== */
+.avatar-circle {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 auto 1rem;
+}
+
+.avatar-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* ==========================================================================
+8. ITEM LISTS
+========================================================================== */
+.item-list {
+    text-align: left;
+}
+
+.item-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 0;
+}
+
+.item-list>li:first-child {
+    padding-top: 0;
+}
+
+.item-list>li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.item-list h3 {
+    margin: 0;
+}
+
+.item-list p {
+    margin-bottom: 0;
+}
+
+.list-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0.5rem;
+    flex-shrink: 0;
+    background-color: #EAE6DF;
+    border-radius: 0.75rem;
+    fill: var(--text-body);
+}
+
+/* ==========================================================================
+9. TESTIMONIAL
+========================================================================== */
+.testimonial-section {
+    background: var(--sage);
+    color: rgb(255, 255, 255, 0.4);
+}
+
+.testimonial-section .label {
+    color: rgb(255, 255, 255, 0.4);
+}
+
+.testimonial {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.testimonial::before {
+    content: "“";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8rem;
+    line-height: 1;
+    font-family: 'Pangaia-italic', Georgia, serif;
+    color: rgb(255, 255, 255, 0.1);
+    margin-top: 0;
+}
+
+.testimonial blockquote {
+    position: relative;
+    padding-top: 3.5rem;
+}
+
+.testimonial blockquote h3 {
+    font-family: 'Pangaia-italic', Georgia, serif;
+    font-weight: 200;
+    font-size: var(--font-size-lg);
+    line-height: 1.333;
+    letter-spacing: 0.02em;
+    color: rgb(255, 255, 255, 1);
+}
+
+.testimonial-author span {
+    display: block;
+}
+
+/* ==========================================================================
+10. ACCORDIONS (FAQ)
+========================================================================== */
+details {
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+    padding: 0.75rem 0;
+}
+
+details:last-of-type {
+    border-bottom: none;
+}
+
+summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+    font-weight: bold;
+    text-align: left;
+    font-size: var(--font-size-base);
+    color: var(--text-heading);
+
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: "+";
+    font-size: var(--font-size-lg);
+    font-weight: 400;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+    margin-left: var(--space-16);
+    color: var(--sand);
+}
+
+details p {
+    margin: 0.75rem 0;
+}
+
+details[open] summary::after {
+    content: "\2212";
+}
+
+details ul {
+    list-style: disc;
+    list-style-position: outside;
+    padding-left: 1rem;
+}
+
+/* ==========================================================================
+11. FOOTER
+========================================================================== */
+footer {
+    background-color: var(--navy);
+    width: 100%;
+    text-align: center;
+    padding: 5rem 0;
+    color: rgb(255, 255, 255, 1);
+}
+
+footer .label {
+    color: rgb(255, 255, 255, 0.7);
+}
+
+footer a {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+footer .xsmall-text {
+    color: rgb(255, 255, 255, 0.5);
+}
+
+/* Offset sticky header height plus extra breathing room */
+section {
+    scroll-margin-top: 2rem;
+    /* Increased from 4rem for extra headroom */
+}
