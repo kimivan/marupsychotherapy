@@ -19,14 +19,14 @@ content:
         label: "Canonical Website URL"
         type: string
       - name: faviconSvg
-        label: "Favicon SVG Path"
-        type: string
+        label: "Favicon SVG File"
+        type: image
       - name: faviconIco
-        label: "Favicon ICO Path"
-        type: string
+        label: "Favicon ICO File"
+        type: image
       - name: appleTouchIcon
-        label: "Apple Touch Icon Path"
-        type: string
+        label: "Apple Touch Icon File"
+        type: image
 
   - name: hero
     label: "Hero Banner"
