@@ -4,6 +4,7 @@ import hero from "../content/sections/hero.json";
 import about from "../content/sections/about.json";
 import services from "../content/sections/focus.json";
 import approach from "../content/sections/approach.json";
+import location from "../content/sections/location.json";
 ---
 
 <!doctype html>
@@ -169,38 +170,28 @@ import approach from "../content/sections/approach.json";
             </div>
         </section>
 
-        <!-- Location & Availability -->
+        <!-- Location & Availability Section -->
         <section id="location">
             <div class="container">
-                <h2>Location &amp; Availability</h2>
-                <p class="section-subhead">
-                    Telehealth statewide &amp; in-person in Atlanta
-                </p>
+                <h2>{location.title}</h2>
+                <p class="section-subhead">{location.subtitle}</p>
                 <hr class="section-divider" />
-                <p>
-                    Accepting new clients for virtual therapy statewide across
-                    Georgia, with in-person appointments coming soon to Atlanta.
-                    Scheduling availability from 8:00 AM to 7:00 PM.
-                </p>
+                {location.introText && <p>{location.introText}</p>}
 
-                <p class="label">Address</p>
-                <p class="small-text">
-                    In-person office opening soon in Atlanta.
-                </p>
-
-                <p class="label">Rate</p>
-                <p class="small-text">
-                    $200 per 50-minute session.<br />
-                    If fee structure is a potential barrier to working together, please
-                    ask about sliding scale availability during our initial outreach.
-                </p>
-
-                <p class="label">Insurance</p>
-                <p class="small-text">
-                    I am out-of-network and do not bill insurance directly.
-                    However, many insurance plans offer out-of-network benefits
-                    that reimburse a portion of therapy costs.
-                </p>
+                {
+                    location.details &&
+                        location.details.map((block) => (
+                            <>
+                                <p class="label">{block.label}</p>
+                                <p
+                                    class="small-text"
+                                    style="white-space: pre-line;"
+                                >
+                                    {block.text}
+                                </p>
+                            </>
+                        ))
+                }
             </div>
         </section>
 

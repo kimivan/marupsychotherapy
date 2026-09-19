@@ -104,3 +104,30 @@ content:
           - name: svgPath
             label: "Icon SVG Path (Optional)"
             type: string
+            
+  - name: location
+    label: "Location & Logistics"
+    type: file
+    path: "src/content/sections/location.json"
+    format: json
+    fields:
+      - name: title
+        label: "Section Title"
+        type: string
+      - name: subtitle
+        label: "Section Subtitle"
+        type: string
+      - name: introText
+        label: "Introductory Paragraph"
+        type: text
+      - name: details
+        label: "Detail Blocks (Address, Rate, Insurance, etc.)"
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: "Block Title / Label"
+            type: string
+          - name: text
+            label: "Block Description / Text"
+            type: text
