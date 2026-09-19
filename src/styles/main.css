@@ -481,6 +481,8 @@ summary::after {
 
 details p {
     margin: 0.75rem 0;
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
 }
 
 details[open] summary::after {
@@ -491,6 +493,8 @@ details ul {
     list-style: disc;
     list-style-position: outside;
     padding-left: 1rem;
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
 }
 
 /* ==========================================================================
