@@ -3,22 +3,23 @@ media:
   output: /
 
 content:
-  - label: "Homepage"
+  - name: homepage
+    label: "Homepage"
     type: file
     path: "src/content/homepage.json"
     fields:
-      - label: "Badge Text"
-        name: "badge"
+      - name: badge
+        label: "Badge Text"
         type: string
-      - label: "Headline"
-        name: "headline"
+      - name: headline
+        label: "Headline"
         type: string
-      - label: "Subheadline"
-        name: "subheadline"
+      - name: subheadline
+        label: "Subheadline"
         type: string
-      - label: "Button Text"
-        name: "buttonText"
+      - name: buttonText
+        label: "Button Text"
         type: string
-      - label: "Button URL"
-        name: "buttonUrl"
+      - name: buttonUrl
+        label: "Button URL"
         type: string
