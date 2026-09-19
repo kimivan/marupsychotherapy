@@ -29,32 +29,27 @@ content:
         type: image
 
   - name: hero
-    label: "Hero Banner"
-    type: file
-    path: "src/content/sections/hero.json"
-    format: json
+    label: Hero Section
+    file: src/content/sections/hero.json
     fields:
-      - name: badge
-        label: "Badge Text"
-        type: string
-      - name: title
-        label: "Main Heading"
-        type: string
-      - name: subtitle
-        label: "Subtitle"
-        type: text
-      - name: primaryButtonText
-        label: "Primary Button Text"
-        type: string
-      - name: primaryButtonUrl
-        label: "Primary Button URL"
-        type: string
-      - name: secondaryButtonText
-        label: "Secondary Button Text"
-        type: string
-      - name: secondaryButtonUrl
-        label: "Secondary Button URL"
-        type: string
+    - name: headlinePre
+      label: Headline (Pre-Highlight)
+      type: string
+    - name: headlineHighlight
+      label: Headline (Highlighted Text)
+      type: string
+    - name: headlinePost
+      label: Headline (Post-Highlight)
+      type: string
+    - name: subheadline
+      label: Subheadline
+      type: text
+    - name: buttonText
+      label: Button Text
+      type: string
+    - name: buttonUrl
+      label: Button URL
+      type: string
 
   - name: about
     label: About Section

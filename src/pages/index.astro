@@ -71,23 +71,17 @@ import footer from "../content/sections/footer.json";
         </header>
 
         <!-- Hero Section -->
-        <section class="hero">
+        <section id="hero">
             <div class="container">
-                <p class="badge">Accepting New Clients</p>
                 <h1>
-                    {hero.headlinePre}<mark class="highlight"
-                        >{hero.headlineHighlight}</mark
-                    >{hero.headlinePost}
+                    {hero.headlinePre}
+                    <span class="highlight">{hero.headlineHighlight}</span>
+                    {hero.headlinePost}
                 </h1>
-                <p>{hero.subheadline}</p>
-                <a
-                    href={hero.buttonUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn"
-                >
-                    {hero.buttonText}
-                </a>
+                <p class="hero-subhead">{hero.subheadline}</p>
+                <div class="hero-cta">
+                    <a href={hero.buttonUrl} class="btn">{hero.buttonText}</a>
+                </div>
             </div>
         </section>
 
