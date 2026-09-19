@@ -39,14 +39,9 @@ content:
       - name: aboutBio
         label: "About Bio Text"
         type: text
-      - name: aboutBlocks
-        label: "Info Blocks"
+      - name: aboutEducation
+        label: "Education List"
         type: list
-        type: object
-        fields:
-          - name: title
-            label: "Block Title"
-            type: string
-          - name: items
-            label: "Bullet Points (One per line)"
-            type: text
+        field:
+          label: "Degree / Certification"
+          type: string

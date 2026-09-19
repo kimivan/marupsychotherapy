@@ -67,23 +67,17 @@ import homepage from "../content/homepage.json";
                 <p>{homepage.aboutBio}</p>
 
                 {
-                    homepage.aboutBlocks &&
-                        homepage.aboutBlocks.map((block) => (
+                    homepage.aboutEducation &&
+                        homepage.aboutEducation.length > 0 && (
                             <>
-                                <p class="label">{block.title}</p>
+                                <p class="label">Education</p>
                                 <ul>
-                                    {block.items &&
-                                        block.items
-                                            .split("\n")
-                                            .filter(Boolean)
-                                            .map((item) => (
-                                                <li class="small-text">
-                                                    {item.trim()}
-                                                </li>
-                                            ))}
+                                    {homepage.aboutEducation.map((degree) => (
+                                        <li class="small-text">{degree}</li>
+                                    ))}
                                 </ul>
                             </>
-                        ))
+                        )
                 }
             </div>
         </section>
