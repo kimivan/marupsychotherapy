@@ -1,5 +1,8 @@
 {
     "siteTitle": "Maru Psychotherapy | Therapy & Counseling in Atlanta, GA",
     "siteDescription": "Individual therapy for adult children of immigrants navigating interpersonal stress. Telehealth across Georgia and in-person sessions in Atlanta, GA.",
-    "siteUrl": "https://marupsychotherapy.com/"
+    "siteUrl": "https://marupsychotherapy.com/",
+    "faviconSvg": "assets/favicon/favicon.svg",
+    "faviconIco": "assets/favicon/favicon.ico",
+    "appleTouchIcon": "assets/favicon/apple-touch-icon.png"
 }

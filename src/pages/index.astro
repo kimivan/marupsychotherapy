@@ -1,7 +1,7 @@
 ---
 import "../styles/main.css";
 import { marked } from "marked";
-import hero from "../content/sections/site.json";
+import site from "../content/sections/site.json";
 import hero from "../content/sections/hero.json";
 import about from "../content/sections/about.json";
 import services from "../content/sections/focus.json";
@@ -24,25 +24,17 @@ import footer from "../content/sections/footer.json";
         <meta property="og:description" content={site.siteDescription} />
         <meta property="og:type" content="website" />
 
-        <link
-            rel="icon"
-            type="image/png"
-            href="assets/favicon/favicon-96x96.png"
-            sizes="96x96"
-        />
-        <link
-            rel="icon"
-            type="image/svg+xml"
-            href="assets/favicon/favicon.svg"
-        />
-        <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+        <!-- Editable Favicon Links -->
+        <link rel="icon" type="image/svg+xml" href={`/${site.faviconSvg}`} />
+        <link rel="shortcut icon" href={`/${site.faviconIco}`} />
         <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="assets/favicon/apple-touch-icon.png"
+            href={`/${site.appleTouchIcon}`}
         />
         <link rel="manifest" href="assets/favicon/site.webmanifest" />
 
+        <!-- Fonts & Styles -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link

@@ -18,6 +18,15 @@ content:
       - name: siteUrl
         label: "Canonical Website URL"
         type: string
+      - name: faviconSvg
+        label: "Favicon SVG Path"
+        type: string
+      - name: faviconIco
+        label: "Favicon ICO Path"
+        type: string
+      - name: appleTouchIcon
+        label: "Apple Touch Icon Path"
+        type: string
 
   - name: hero
     label: "Hero Banner"
