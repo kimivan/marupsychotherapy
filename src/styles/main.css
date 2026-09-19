@@ -376,6 +376,8 @@ section.hero {
 
 .item-list p {
     margin-bottom: 0;
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
 }
 
 .list-icon {
