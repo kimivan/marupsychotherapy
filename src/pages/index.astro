@@ -186,20 +186,20 @@ import footer from "../content/sections/footer.json";
 
         <!-- Testimonial -->
         <section class="testimonial-section">
-            <div class="container">
-                <figure class="testimonial">
-                    <blockquote>
-                        <h3>
-                            {{ testimonial_quote }}
-                        </h3>
-                    </blockquote>
-                    <figcaption class="testimonial-author">
-                        <span class="label">{{ testimonial_author }}</span>
-                        <span class="small-text">{{ testimonial_title }}</span>
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
+        <div class="container">
+            <figure class="testimonial">
+                <blockquote>
+                    <h3>
+                        {{ testimonial.quote }}
+                    </h3>
+                </blockquote>
+                <figcaption class="testimonial-author">
+                    <span class="label">{{ testimonial.author }}</span>
+                    <span class="small-text">{{ testimonial.title }}</span>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
 
         <!-- Location & Availability Section -->
         <section id="location">

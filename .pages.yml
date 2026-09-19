@@ -145,14 +145,14 @@ content:
     path: "src/content/sections/testimonial.json"
     format: json
     fields:
-      - name: testimonial_quote
-        label: Testimonial Quote
+      - name: quote
+        label: "Testimonial Quote"
         type: text
-      - name: testimonial_author
-        label: Testimonial Author Name
+      - name: author
+        label: "Author Name"
         type: string
-      - name: testimonial_title
-        label: Testimonial Author Title
+      - name: title
+        label: "Author Title"
         type: string
 
   - name: location
