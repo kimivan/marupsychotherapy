@@ -29,7 +29,7 @@ content:
         type: image
 
   - name: hero
-    label: Hero Section
+    label: hero Section
     file: src/content/sections/hero.json
     fields:
     - name: headlinePre
