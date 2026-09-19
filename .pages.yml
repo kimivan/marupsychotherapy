@@ -4,7 +4,7 @@ media:
 
 content:
   - name: site
-    label: "SEO & Site Metadata"
+    label: "Site Metadata"
     type: file
     path: "src/content/sections/site.json"
     format: json
@@ -231,4 +231,3 @@ content:
       - name: socialUrl
         label: "Social Profile URL"
         type: string
-        
