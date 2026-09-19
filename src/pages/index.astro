@@ -301,23 +301,25 @@ import footer from "../content/sections/footer.json";
 
         <script>
             // Dynamic copyright year
-            document.getElementById("year").textContent =
-                new Date().getFullYear();
+            const yearEl = document.getElementById("year");
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear().toString();
+            }
 
             // Sticky header shadow effect
             const siteHeader = document.getElementById("siteHeader");
             window.addEventListener("scroll", () => {
                 if (window.scrollY > 10) {
-                    siteHeader.classList.add("scrolled");
+                    siteHeader?.classList.add("scrolled");
                 } else {
-                    siteHeader.classList.remove("scrolled");
+                    siteHeader?.classList.remove("scrolled");
                 }
             });
 
             // Smooth scroll for logo (back to top)
             document
                 .getElementById("logoLink")
-                .addEventListener("click", (e) => {
+                ?.addEventListener("click", (e) => {
                     e.preventDefault();
                     window.scrollTo({
                         top: 0,
@@ -327,11 +329,12 @@ import footer from "../content/sections/footer.json";
 
             // Smooth scroll for site nav without changing URL hash
             document.querySelectorAll(".site-nav a").forEach((anchor) => {
-                anchor.addEventListener("click", function (e) {
+                anchor.addEventListener("click", (e) => {
                     e.preventDefault();
-                    const targetId = this.getAttribute("href");
-                    const targetSection = document.querySelector(targetId);
+                    const targetId = anchor.getAttribute("href");
+                    if (!targetId) return;
 
+                    const targetSection = document.querySelector(targetId);
                     if (targetSection) {
                         targetSection.scrollIntoView({
                             behavior: "smooth",
