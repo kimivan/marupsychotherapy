@@ -51,7 +51,7 @@ content:
         type: string
 
   - name: about
-    label: "About Section"
+    label: "About"
     type: file
     path: "src/content/sections/about.json"
     format: json
