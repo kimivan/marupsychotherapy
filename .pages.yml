@@ -125,7 +125,7 @@ content:
             label: "Description"
             type: text
           - name: svgPath
-            label: "Icon SVG Path (Optional)"
+            label: "Icon SVG Path"
             type: string
 
   - name: location
@@ -144,7 +144,7 @@ content:
         label: "Introductory Paragraph"
         type: text
       - name: details
-        label: "Detail Blocks (Address, Rate, Insurance, etc.)"
+        label: "Detail Blocks"
         type: object
         list: true
         fields:
