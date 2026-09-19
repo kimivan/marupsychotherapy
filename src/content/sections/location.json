@@ -13,11 +13,7 @@
     },
     {
       "label": "Insurance",
-      "text": "I am out-of-network and do not bill insurance directly. However, many insurance plans offer out-of-network benefits that reimburse a portion of therapy costs.\n\nsomething else"
-    },
-    {
-      "label": "something else",
-      "text": "something else"
+      "text": "I am out-of-network and do not bill insurance directly. However, many insurance plans offer out-of-network benefits that reimburse a portion of therapy costs."
     }
   ]
 }
