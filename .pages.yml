@@ -69,12 +69,12 @@ content:
         label: "Bio"
         type: text
       - name: listBlocks
-        label: "Custom Lists (Education, Languages, etc.)"
+        label: "Sub Blocks"
         type: object
         list: true
         fields:
           - name: heading
-            label: "List Heading (e.g., Education, Languages)"
+            label: "Title"
             type: string
           - name: items
             label: "Items"
