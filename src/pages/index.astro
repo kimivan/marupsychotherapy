@@ -35,18 +35,18 @@ import about from "../content/sections/about.json";
             <div class="container">
                 <p class="badge">Accepting New Clients</p>
                 <h1>
-                    {homepage.headlinePre}<mark class="highlight"
-                        >{homepage.headlineHighlight}</mark
-                    >{homepage.headlinePost}
+                    {hero.headlinePre}<mark class="highlight"
+                        >{hero.headlineHighlight}</mark
+                    >{hero.headlinePost}
                 </h1>
-                <p>{homepage.subheadline}</p>
+                <p>{hero.subheadline}</p>
                 <a
-                    href={homepage.buttonUrl}
+                    href={hero.buttonUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     class="btn"
                 >
-                    {homepage.buttonText}
+                    {hero.buttonText}
                 </a>
             </div>
         </section>
@@ -56,29 +56,25 @@ import about from "../content/sections/about.json";
             <div class="container">
                 <div class="avatar-container">
                     <div class="avatar-circle">
-                        <img
-                            src={homepage.aboutImage}
-                            alt={homepage.aboutTitle}
-                        />
+                        <img src={about.aboutImage} alt={about.aboutTitle} />
                     </div>
                 </div>
-                <h2>{homepage.aboutTitle}</h2>
-                <p class="section-subhead">{homepage.aboutSubtitle}</p>
+                <h2>{about.aboutTitle}</h2>
+                <p class="section-subhead">{about.aboutSubtitle}</p>
                 <hr class="section-divider" />
-                <p>{homepage.aboutBio}</p>
+                <p>{about.aboutBio}</p>
 
                 {
-                    homepage.aboutEducation &&
-                        homepage.aboutEducation.length > 0 && (
-                            <>
-                                <p class="label">Education</p>
-                                <ul>
-                                    {homepage.aboutEducation.map((degree) => (
-                                        <li class="small-text">{degree}</li>
-                                    ))}
-                                </ul>
-                            </>
-                        )
+                    about.aboutEducation && about.aboutEducation.length > 0 && (
+                        <>
+                            <p class="label">Education</p>
+                            <ul>
+                                {about.aboutEducation.map((degree) => (
+                                    <li class="small-text">{degree}</li>
+                                ))}
+                            </ul>
+                        </>
+                    )
                 }
             </div>
         </section>
