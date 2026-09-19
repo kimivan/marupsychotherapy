@@ -50,3 +50,30 @@ content:
         label: "Education List"
         type: string
         list: true
+
+  - name: focus
+    label: "Areas of Focus"
+    type: file
+    path: "src/content/sections/focus.json"
+    format: json
+    fields:
+      - name: title
+        label: "Section Title"
+        type: string
+      - name: subtitle
+        label: "Section Subtitle"
+        type: string
+      - name: items
+        label: "Focus Areas"
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: "Area Title"
+            type: string
+          - name: description
+            label: "Description"
+            type: text
+          - name: svgPath
+            label: "Icon SVG Path (Optional)"
+            type: string
