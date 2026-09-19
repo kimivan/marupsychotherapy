@@ -12,8 +12,8 @@
 /* Upright Variable Font */
 @font-face {
     font-family: 'Pangaia';
-    src: url('pangaia-variable.woff2') format('woff2-variations'),
-        url('pangaia-variable.woff2') format('woff2');
+    src: url('/fonts/pangaia-variable.woff2') format('woff2-variations'),
+        url('/fonts/pangaia-variable.woff2') format('woff2');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -22,8 +22,8 @@
 /* Italic Variable Font */
 @font-face {
     font-family: 'Pangaia-italic';
-    src: url('pangaia-variableitalic.woff2') format('woff2-variations'),
-        url('pangaia-variableitalic.woff2') format('woff2');
+    src: url('/fonts/pangaia-variableitalic.woff2') format('woff2-variations'),
+        url('/fonts/pangaia-variableitalic.woff2') format('woff2');
     font-weight: 100 900;
     font-style: italic;
     font-display: swap;
