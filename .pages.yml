@@ -75,7 +75,7 @@ content:
   - name: focus
     label: "Focus"
     type: file
-    path: "src/content/sections/focus.json"
+    path: "src/content/sections/services.json"
     format: json
     fields:
       - name: title
