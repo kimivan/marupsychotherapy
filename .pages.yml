@@ -3,10 +3,10 @@ media:
   output: /
 
 content:
-  - name: homepage
-    label: "Homepage"
+  - name: hero
+    label: "1. Hero Banner"
     type: file
-    path: "src/content/homepage.json"
+    path: "src/content/sections/hero.json"
     format: json
     fields:
       - name: headlinePre
@@ -27,6 +27,13 @@ content:
       - name: buttonUrl
         label: "Button URL"
         type: string
+
+  - name: about
+    label: "2. About Section"
+    type: file
+    path: "src/content/sections/about.json"
+    format: json
+    fields:
       - name: aboutImage
         label: "About Photo"
         type: image

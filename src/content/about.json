@@ -1,0 +1,20 @@
+- name: about
+        label: "About Section"
+        type: object
+        fields:
+          - name: aboutImage
+            label: "About Photo"
+            type: image
+          - name: aboutTitle
+            label: "About Section Title"
+            type: string
+          - name: aboutSubtitle
+            label: "About Section Subtitle"
+            type: string
+          - name: aboutBio
+            label: "About Bio Text"
+            type: text
+          - name: aboutEducation
+            label: "Education List"
+            type: string
+            list: true
