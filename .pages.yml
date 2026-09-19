@@ -77,7 +77,6 @@ content:
             label: "Title"
             type: string
           - name: items
-            label: "Items"
             type: object
             list: true
             fields:
