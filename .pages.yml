@@ -104,7 +104,7 @@ content:
           - name: svgPath
             label: "Icon SVG Path (Optional)"
             type: string
-            
+
   - name: location
     label: "Location & Logistics"
     type: file
@@ -131,3 +131,27 @@ content:
           - name: text
             label: "Block Description / Text"
             type: text
+
+  - name: faqs
+    label: "FAQs"
+    type: file
+    path: "src/content/sections/faqs.json"
+    format: json
+    fields:
+      - name: title
+        label: "Section Title"
+        type: string
+      - name: subtitle
+        label: "Section Subtitle"
+        type: string
+      - name: questions
+        label: "FAQ Items"
+        type: object
+        list: true
+        fields:
+          - name: question
+            label: "Question"
+            type: string
+          - name: answer
+            label: "Answer (Markdown supported for lists/links)"
+            type: rich-text
