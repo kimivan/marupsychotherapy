@@ -29,49 +29,53 @@ content:
         type: image
 
   - name: hero
-    label: hero Section
-    file: src/content/sections/hero.json
+    label: "Hero Section"
+    type: file
+    path: "src/content/sections/hero.json"
+    format: json
     fields:
-    - name: headlinePre
-      label: Headline Pre
-      type: string
-    - name: headlineHighlight
-      label: Headline Highlight
-      type: string
-    - name: headlinePost
-      label: Headline Post
-      type: string
-    - name: subheadline
-      label: Subheadline
-      type: text
-    - name: buttonText
-      label: Button Text
-      type: string
-    - name: buttonUrl
-      label: Button URL
-      type: string
+      - name: headlinePre
+        label: "Headline Pre"
+        type: string
+      - name: headlineHighlight
+        label: "Headline Highlight"
+        type: string
+      - name: headlinePost
+        label: "Headline Post"
+        type: string
+      - name: subheadline
+        label: "Subheadline"
+        type: text
+      - name: buttonText
+        label: "Button Text"
+        type: string
+      - name: buttonUrl
+        label: "Button URL"
+        type: string
 
   - name: about
-    label: About Section
-    file: src/content/sections/about.json
+    label: "About Section"
+    type: file
+    path: "src/content/sections/about.json"
+    format: json
     fields:
-    - name: image
-      label: Image
-      type: image
-    - name: title
-      label: Title
-      type: string
-    - name: subtitle
-      label: Subtitle
-      type: string
-    - name: bio
-      label: Bio
-      type: text
-    - name: education
-      label: Education
-      type: list
-      field:
+      - name: image
+        label: "Image"
+        type: image
+      - name: title
+        label: "Title"
         type: string
+      - name: subtitle
+        label: "Subtitle"
+        type: string
+      - name: bio
+        label: "Bio"
+        type: text
+      - name: education
+        label: "Education"
+        type: list
+        field:
+          type: string
 
   - name: focus
     label: "Clinical Focus"
