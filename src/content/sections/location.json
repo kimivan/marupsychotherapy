@@ -4,7 +4,8 @@
   "introText": "Accepting new clients for virtual therapy statewide across Georgia, and in-person appointments in Atlanta. Scheduling availability from 8:00 AM to 7:00 PM.",
   "details": [
     {
-      "label": "1801 Peachtree Street NE, Suite 350 Atlanta, GA 30309"
+      "label": "Location",
+      "text": "1801 Peachtree Street NE, Suite 350 Atlanta, GA 30309"
     },
     {
       "label": "Rate",
