@@ -1,11 +1,10 @@
 {
   "title": "Location & Availability",
   "subtitle": "Telehealth statewide & in-person in Atlanta",
-  "introText": "Accepting new clients for virtual therapy statewide across Georgia, with in-person appointments coming soon to Atlanta. Scheduling availability from 8:00 AM to 7:00 PM.",
+  "introText": "Accepting new clients for virtual therapy statewide across Georgia, and in-person appointments in Atlanta. Scheduling availability from 8:00 AM to 7:00 PM.",
   "details": [
     {
-      "label": "Address",
-      "text": "In-person office opening soon in Atlanta."
+      "label": "1801 Peachtree Street NE, Suite 350 Atlanta, GA 30309"
     },
     {
       "label": "Rate",
